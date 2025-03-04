@@ -1,0 +1,168 @@
+[2025-02-28T18:01:10.880+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-02-28T18:01:10.908+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ha_etl_process.extract_task manual__2025-02-28T18:01:09.211292+00:00 [queued]>
+[2025-02-28T18:01:10.917+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ha_etl_process.extract_task manual__2025-02-28T18:01:09.211292+00:00 [queued]>
+[2025-02-28T18:01:10.918+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 2
+[2025-02-28T18:01:10.940+0000] {taskinstance.py:2890} INFO - Executing <Task(PythonOperator): extract_task> on 2025-02-28 18:01:09.211292+00:00
+[2025-02-28T18:01:10.950+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'ha_etl_process', 'extract_task', 'manual__2025-02-28T18:01:09.211292+00:00', '--job-id', '127', '--raw', '--subdir', 'DAGS_FOLDER/ha_etl_process.py', '--cfg-path', '/tmp/tmpmffyi6_q']
+[2025-02-28T18:01:10.952+0000] {standard_task_runner.py:105} INFO - Job 127: Subtask extract_task
+[2025-02-28T18:01:10.958+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=1155) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-02-28T18:01:10.959+0000] {standard_task_runner.py:72} INFO - Started process 1195 to run task
+[2025-02-28T18:01:11.018+0000] {task_command.py:467} INFO - Running <TaskInstance: ha_etl_process.extract_task manual__2025-02-28T18:01:09.211292+00:00 [running]> on host 151d4861bf1b
+[2025-02-28T18:01:11.133+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='ha_etl_process' AIRFLOW_CTX_TASK_ID='extract_task' AIRFLOW_CTX_EXECUTION_DATE='2025-02-28T18:01:09.211292+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-02-28T18:01:09.211292+00:00'
+[2025-02-28T18:01:11.136+0000] {logging_mixin.py:190} INFO - Task instance is in running state
+[2025-02-28T18:01:11.137+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2025-02-28T18:01:11.138+0000] {logging_mixin.py:190} INFO - Current task name:extract_task state:running start_date:2025-02-28 18:01:10.909183+00:00
+[2025-02-28T18:01:11.139+0000] {logging_mixin.py:190} INFO - Dag name:ha_etl_process and current dag run status:running
+[2025-02-28T18:01:11.141+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2025-02-28T18:01:11.143+0000] {logging_mixin.py:190} INFO - 🔍 Tentando se conectar ao Home Assistant...
+[2025-02-28T18:01:11.145+0000] {logging_mixin.py:190} INFO - 📦 Extraindo histórico da entidade sensor.abc_consumo_ativo_total...
+[2025-02-28T18:01:11.492+0000] {logging_mixin.py:190} INFO - ⚠️ Nenhum dado retornado.
+[2025-02-28T18:01:11.501+0000] {logging_mixin.py:190} INFO - ⚠️ Nenhum dado retornado.
+[2025-02-28T18:01:11.512+0000] {logging_mixin.py:190} INFO - ⚠️ Nenhum dado retornado.
+[2025-02-28T18:01:11.527+0000] {logging_mixin.py:190} INFO - ⚠️ Nenhum dado retornado.
+[2025-02-28T18:01:11.535+0000] {logging_mixin.py:190} INFO - ⚠️ Nenhum dado retornado.
+[2025-02-28T18:01:11.544+0000] {logging_mixin.py:190} INFO - ⚠️ Nenhum dado retornado.
+[2025-02-28T18:01:11.556+0000] {logging_mixin.py:190} INFO - ⚠️ Nenhum dado retornado.
+[2025-02-28T18:01:11.565+0000] {logging_mixin.py:190} INFO - ⚠️ Nenhum dado retornado.
+[2025-02-28T18:01:11.576+0000] {logging_mixin.py:190} INFO - ⚠️ Nenhum dado retornado.
+[2025-02-28T18:01:11.586+0000] {logging_mixin.py:190} INFO - ⚠️ Nenhum dado retornado.
+[2025-02-28T18:01:11.594+0000] {logging_mixin.py:190} INFO - ⚠️ Nenhum dado retornado.
+[2025-02-28T18:01:11.605+0000] {logging_mixin.py:190} INFO - ⚠️ Nenhum dado retornado.
+[2025-02-28T18:01:11.614+0000] {logging_mixin.py:190} INFO - ⚠️ Nenhum dado retornado.
+[2025-02-28T18:01:11.625+0000] {logging_mixin.py:190} INFO - ⚠️ Nenhum dado retornado.
+[2025-02-28T18:01:11.635+0000] {logging_mixin.py:190} INFO - ⚠️ Nenhum dado retornado.
+[2025-02-28T18:01:11.643+0000] {logging_mixin.py:190} INFO - ⚠️ Nenhum dado retornado.
+[2025-02-28T18:01:11.653+0000] {logging_mixin.py:190} INFO - ⚠️ Nenhum dado retornado.
+[2025-02-28T18:01:11.663+0000] {logging_mixin.py:190} INFO - ⚠️ Nenhum dado retornado.
+[2025-02-28T18:01:11.673+0000] {logging_mixin.py:190} INFO - ⚠️ Nenhum dado retornado.
+[2025-02-28T18:01:11.684+0000] {logging_mixin.py:190} INFO - ⚠️ Nenhum dado retornado.
+[2025-02-28T18:01:11.694+0000] {logging_mixin.py:190} INFO - ⚠️ Nenhum dado retornado.
+[2025-02-28T18:01:11.703+0000] {logging_mixin.py:190} INFO - ⚠️ Nenhum dado retornado.
+[2025-02-28T18:01:11.712+0000] {logging_mixin.py:190} INFO - ⚠️ Nenhum dado retornado.
+[2025-02-28T18:01:11.724+0000] {logging_mixin.py:190} INFO - ⚠️ Nenhum dado retornado.
+[2025-02-28T18:01:11.735+0000] {logging_mixin.py:190} INFO - ⚠️ Nenhum dado retornado.
+[2025-02-28T18:01:11.744+0000] {logging_mixin.py:190} INFO - ⚠️ Nenhum dado retornado.
+[2025-02-28T18:01:11.755+0000] {logging_mixin.py:190} INFO - ⚠️ Nenhum dado retornado.
+[2025-02-28T18:01:11.764+0000] {logging_mixin.py:190} INFO - ⚠️ Nenhum dado retornado.
+[2025-02-28T18:01:11.778+0000] {logging_mixin.py:190} INFO - ⚠️ Nenhum dado retornado.
+[2025-02-28T18:01:11.787+0000] {logging_mixin.py:190} INFO - ⚠️ Nenhum dado retornado.
+[2025-02-28T18:01:11.805+0000] {logging_mixin.py:190} INFO - ⚠️ Nenhum dado retornado.
+[2025-02-28T18:01:11.816+0000] {logging_mixin.py:190} INFO - ⚠️ Nenhum dado retornado.
+[2025-02-28T18:01:11.822+0000] {logging_mixin.py:190} INFO - ✅ 1841 registros extraídos.
+[2025-02-28T18:01:11.846+0000] {logging_mixin.py:190} INFO - 📁 Dados salvos em /tmp/raw_data.csv
+[2025-02-28T18:01:11.847+0000] {logging_mixin.py:190} INFO - ❌ Erro na extração dos dados: DataFrame index must be unique for orient='columns'.
+[2025-02-28T18:01:11.848+0000] {taskinstance.py:3313} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 768, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 734, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 424, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/ha_etl_process.py", line 119, in extract_data
+    return history.to_json()
+           ^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/core/generic.py", line 2629, in to_json
+    return json.to_json(
+           ^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/io/json/_json.py", line 195, in to_json
+    s = writer(
+        ^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/io/json/_json.py", line 251, in __init__
+    self._format_axes()
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/io/json/_json.py", line 307, in _format_axes
+    raise ValueError(
+ValueError: DataFrame index must be unique for orient='columns'.
+[2025-02-28T18:01:11.871+0000] {logging_mixin.py:190} INFO - Task instance in failure state
+[2025-02-28T18:01:11.872+0000] {logging_mixin.py:190} INFO - Task start:2025-02-28 18:01:10.909183+00:00 end:2025-02-28 18:01:11.871414+00:00 duration:0.962231
+[2025-02-28T18:01:11.873+0000] {logging_mixin.py:190} INFO - Task:<Task(PythonOperator): extract_task> dag:<DAG: ha_etl_process> dagrun:<DagRun ha_etl_process @ 2025-02-28 18:01:09.211292+00:00: manual__2025-02-28T18:01:09.211292+00:00, state:running, queued_at: 2025-02-28 18:01:09.227707+00:00. externally triggered: True>
+[2025-02-28T18:01:11.873+0000] {logging_mixin.py:190} INFO - Failure caused by DataFrame index must be unique for orient='columns'.
+[2025-02-28T18:01:11.874+0000] {taskinstance.py:1226} INFO - Marking task as UP_FOR_RETRY. dag_id=ha_etl_process, task_id=extract_task, run_id=manual__2025-02-28T18:01:09.211292+00:00, execution_date=20250228T180109, start_date=20250228T180110, end_date=20250228T180111
+[2025-02-28T18:01:11.921+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-02-28T18:01:11.922+0000] {standard_task_runner.py:124} ERROR - Failed to execute job 127 for task extract_task (DataFrame index must be unique for orient='columns'.; 1195)
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py", line 117, in _start_by_fork
+    ret = args.func(args, dag=self.dag)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/cli.py", line 116, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 483, in task_run
+    task_return_code = _run_task_by_selected_method(args, _dag, ti)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 256, in _run_task_by_selected_method
+    return _run_raw_task(args, ti)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 341, in _run_raw_task
+    return ti._run_raw_task(
+           ^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3006, in _run_raw_task
+    return _run_raw_task(
+           ^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 274, in _run_raw_task
+    TaskInstance._execute_task_with_callbacks(
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3161, in _execute_task_with_callbacks
+    result = self._execute_task(context, task_orig)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3185, in _execute_task
+    return _execute_task(self, context, task_orig)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 768, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 734, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 424, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/ha_etl_process.py", line 119, in extract_data
+    return history.to_json()
+           ^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/core/generic.py", line 2629, in to_json
+    return json.to_json(
+           ^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/io/json/_json.py", line 195, in to_json
+    s = writer(
+        ^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/io/json/_json.py", line 251, in __init__
+    self._format_axes()
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/io/json/_json.py", line 307, in _format_axes
+    raise ValueError(
+ValueError: DataFrame index must be unique for orient='columns'.
+[2025-02-28T18:01:11.938+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 1
+[2025-02-28T18:01:11.964+0000] {taskinstance.py:3901} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-02-28T18:01:11.967+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

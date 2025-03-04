@@ -1,0 +1,403 @@
+[2025-02-28T22:12:48.380+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-02-28T22:12:48.400+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ha_etl_process.extract_task manual__2025-02-28T22:12:46.826175+00:00 [queued]>
+[2025-02-28T22:12:48.410+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ha_etl_process.extract_task manual__2025-02-28T22:12:46.826175+00:00 [queued]>
+[2025-02-28T22:12:48.411+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 2
+[2025-02-28T22:12:48.428+0000] {taskinstance.py:2890} INFO - Executing <Task(PythonOperator): extract_task> on 2025-02-28 22:12:46.826175+00:00
+[2025-02-28T22:12:48.439+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'ha_etl_process', 'extract_task', 'manual__2025-02-28T22:12:46.826175+00:00', '--job-id', '154', '--raw', '--subdir', 'DAGS_FOLDER/ha_etl_process.py', '--cfg-path', '/tmp/tmpwj4imi7q']
+[2025-02-28T22:12:48.440+0000] {standard_task_runner.py:105} INFO - Job 154: Subtask extract_task
+[2025-02-28T22:12:48.444+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=1062) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-02-28T22:12:48.446+0000] {standard_task_runner.py:72} INFO - Started process 1079 to run task
+[2025-02-28T22:12:48.488+0000] {task_command.py:467} INFO - Running <TaskInstance: ha_etl_process.extract_task manual__2025-02-28T22:12:46.826175+00:00 [running]> on host 151d4861bf1b
+[2025-02-28T22:12:48.571+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='ha_etl_process' AIRFLOW_CTX_TASK_ID='extract_task' AIRFLOW_CTX_EXECUTION_DATE='2025-02-28T22:12:46.826175+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-02-28T22:12:46.826175+00:00'
+[2025-02-28T22:12:48.572+0000] {logging_mixin.py:190} INFO - Task instance is in running state
+[2025-02-28T22:12:48.573+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2025-02-28T22:12:48.573+0000] {logging_mixin.py:190} INFO - Current task name:extract_task state:running start_date:2025-02-28 22:12:48.401513+00:00
+[2025-02-28T22:12:48.574+0000] {logging_mixin.py:190} INFO - Dag name:ha_etl_process and current dag run status:running
+[2025-02-28T22:12:48.574+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2025-02-28T22:12:48.575+0000] {logging_mixin.py:190} INFO - 🔍 Tentando se conectar ao Home Assistant...
+[2025-02-28T22:12:48.575+0000] {logging_mixin.py:190} INFO - 
+Testing API connection...
+[2025-02-28T22:12:48.592+0000] {logging_mixin.py:190} INFO - Request URL: http://192.168.1.110:8123/api/states
+[2025-02-28T22:12:48.592+0000] {logging_mixin.py:190} INFO - Response Status Code: 200
+[2025-02-28T22:12:48.593+0000] {logging_mixin.py:190} INFO - Response Headers: {'Content-Type': 'application/json', 'Referrer-Policy': 'no-referrer', 'X-Content-Type-Options': 'nosniff', 'Server': '', 'X-Frame-Options': 'SAMEORIGIN', 'Content-Length': '12480', 'Content-Encoding': 'deflate', 'Date': 'Fri, 28 Feb 2025 22:12:48 GMT'}
+[2025-02-28T22:12:48.593+0000] {logging_mixin.py:190} INFO - Response Text: [{"entity_id":"person.home_vand","state":"unknown","attributes":{"editable":true,"id":"home_vand","device_trackers":[],"user_id":"44ab6f69b946413195c093b14b8cf4db","friendly_name":"home_vand"},"last_changed":"2025-02-28T22:09:03.968829+00:00","last_reported":"2025-02-28T22:09:20.221242+00:00","last_updated":"2025-02-28T22:09:20.221242+00:00","context":{"id":"01JN79PQTXF5C6Z7X57CPHM4AN","parent_id":null,"user_id":null}},{"entity_id":"update.home_assistant_supervisor_update","state":"off","attribu
+[2025-02-28T22:12:48.595+0000] {logging_mixin.py:190} INFO - <unusual_prefix_8f7033247fce1c2ce5759715b0045e7a21193f9c_ha_etl_process.HomeAssistantAPI object at 0x7f3c36530cb0>
+[2025-02-28T22:12:48.603+0000] {logging_mixin.py:190} INFO - Request URL: http://192.168.1.110:8123/api/states
+[2025-02-28T22:12:48.604+0000] {logging_mixin.py:190} INFO - Response Status Code: 200
+[2025-02-28T22:12:48.604+0000] {logging_mixin.py:190} INFO - Response Headers: {'Content-Type': 'application/json', 'Referrer-Policy': 'no-referrer', 'X-Content-Type-Options': 'nosniff', 'Server': '', 'X-Frame-Options': 'SAMEORIGIN', 'Content-Length': '12480', 'Content-Encoding': 'deflate', 'Date': 'Fri, 28 Feb 2025 22:12:48 GMT'}
+[2025-02-28T22:12:48.605+0000] {logging_mixin.py:190} INFO - Response Text: [{"entity_id":"person.home_vand","state":"unknown","attributes":{"editable":true,"id":"home_vand","device_trackers":[],"user_id":"44ab6f69b946413195c093b14b8cf4db","friendly_name":"home_vand"},"last_changed":"2025-02-28T22:09:03.968829+00:00","last_reported":"2025-02-28T22:09:20.221242+00:00","last_updated":"2025-02-28T22:09:20.221242+00:00","context":{"id":"01JN79PQTXF5C6Z7X57CPHM4AN","parent_id":null,"user_id":null}},{"entity_id":"update.home_assistant_supervisor_update","state":"off","attribu
+[2025-02-28T22:12:48.607+0000] {logging_mixin.py:190} INFO - person.home_vand: unknown
+[2025-02-28T22:12:48.607+0000] {logging_mixin.py:190} INFO - update.home_assistant_supervisor_update: off
+[2025-02-28T22:12:48.608+0000] {logging_mixin.py:190} INFO - update.home_assistant_core_update: on
+[2025-02-28T22:12:48.608+0000] {logging_mixin.py:190} INFO - update.mosquitto_broker_update: on
+[2025-02-28T22:12:48.608+0000] {logging_mixin.py:190} INFO - update.file_editor_update: off
+[2025-02-28T22:12:48.609+0000] {logging_mixin.py:190} INFO - update.jupyterlab_update: off
+[2025-02-28T22:12:48.609+0000] {logging_mixin.py:190} INFO - update.home_assistant_operating_system_update: on
+[2025-02-28T22:12:48.610+0000] {logging_mixin.py:190} INFO - zone.home: 0
+[2025-02-28T22:12:48.610+0000] {logging_mixin.py:190} INFO - input_number.valor_kwh: 0.86
+[2025-02-28T22:12:48.611+0000] {logging_mixin.py:190} INFO - input_number.tarifa_energia_consumida: 0.0
+[2025-02-28T22:12:48.611+0000] {logging_mixin.py:190} INFO - input_number.tarifa_gas_consumido: 0.0
+[2025-02-28T22:12:48.611+0000] {logging_mixin.py:190} INFO - sensor.consumo_integrado_chuveiro: 1.44
+[2025-02-28T22:12:48.612+0000] {logging_mixin.py:190} INFO - sensor.consumo_integration_ar_condicionado: 0.12
+[2025-02-28T22:12:48.612+0000] {logging_mixin.py:190} INFO - sensor.energy_spent_pc: 6.21
+[2025-02-28T22:12:48.613+0000] {logging_mixin.py:190} INFO - sensor.energy_spent_gel: 4.08
+[2025-02-28T22:12:48.613+0000] {logging_mixin.py:190} INFO - sensor.energy_spent_vent: 5.52
+[2025-02-28T22:12:48.614+0000] {logging_mixin.py:190} INFO - sensor.moon_phases: Fase Lunar Desconhecida
+[2025-02-28T22:12:48.614+0000] {logging_mixin.py:190} INFO - sensor.fa_consumo_diario: 2.9
+[2025-02-28T22:12:48.615+0000] {logging_mixin.py:190} INFO - sensor.fa_consumo_semanal: 18.9
+[2025-02-28T22:12:48.615+0000] {logging_mixin.py:190} INFO - sensor.fa_consumo_mensal: 95.1
+[2025-02-28T22:12:48.616+0000] {logging_mixin.py:190} INFO - sensor.fa_consumo_ontem: 4.1
+[2025-02-28T22:12:48.616+0000] {logging_mixin.py:190} INFO - sensor.fa_consumo_semana_passada: 26.7
+[2025-02-28T22:12:48.616+0000] {logging_mixin.py:190} INFO - sensor.abc_custo_hoje: unavailable
+[2025-02-28T22:12:48.617+0000] {logging_mixin.py:190} INFO - sensor.abc_custo_semanal: unavailable
+[2025-02-28T22:12:48.617+0000] {logging_mixin.py:190} INFO - sensor.abc_custo_mensal: unavailable
+[2025-02-28T22:12:48.618+0000] {logging_mixin.py:190} INFO - sensor.fa_custo_ontem: unknown
+[2025-02-28T22:12:48.618+0000] {logging_mixin.py:190} INFO - sensor.fa_custo_semana_passada: unknown
+[2025-02-28T22:12:48.619+0000] {logging_mixin.py:190} INFO - sensor.fa_custo_mes_passado: unknown
+[2025-02-28T22:12:48.619+0000] {logging_mixin.py:190} INFO - sensor.fa_consumo_mes_passado: 18.3
+[2025-02-28T22:12:48.619+0000] {logging_mixin.py:190} INFO - sensor.fb_consumo_diario: 1.4
+[2025-02-28T22:12:48.620+0000] {logging_mixin.py:190} INFO - sensor.fb_consumo_semanal: 8.5
+[2025-02-28T22:12:48.620+0000] {logging_mixin.py:190} INFO - sensor.fb_consumo_mensal: 43.8
+[2025-02-28T22:12:48.621+0000] {logging_mixin.py:190} INFO - sensor.fb_consumo_ontem: 1.9
+[2025-02-28T22:12:48.621+0000] {logging_mixin.py:190} INFO - sensor.fb_consumo_semana_passada: 10.6
+[2025-02-28T22:12:48.622+0000] {logging_mixin.py:190} INFO - sensor.fb_consumo_mes_passado: 41.8
+[2025-02-28T22:12:48.622+0000] {logging_mixin.py:190} INFO - sensor.fb_custo_hoje: unknown
+[2025-02-28T22:12:48.622+0000] {logging_mixin.py:190} INFO - sensor.fb_custo_semanal: unknown
+[2025-02-28T22:12:48.623+0000] {logging_mixin.py:190} INFO - sensor.fb_custo_mensal: unknown
+[2025-02-28T22:12:48.623+0000] {logging_mixin.py:190} INFO - sensor.fb_custo_ontem: unknown
+[2025-02-28T22:12:48.623+0000] {logging_mixin.py:190} INFO - sensor.fb_custo_semana_passada: unknown
+[2025-02-28T22:12:48.624+0000] {logging_mixin.py:190} INFO - sensor.fb_custo_mes_passado: unknown
+[2025-02-28T22:12:48.624+0000] {logging_mixin.py:190} INFO - sensor.fc_consumo_diario: 0.0
+[2025-02-28T22:12:48.625+0000] {logging_mixin.py:190} INFO - sensor.fc_consumo_semanal: 0.0
+[2025-02-28T22:12:48.625+0000] {logging_mixin.py:190} INFO - sensor.fc_consumo_mensal: 0.0
+[2025-02-28T22:12:48.626+0000] {logging_mixin.py:190} INFO - sensor.fc_consumo_ontem: 0.0
+[2025-02-28T22:12:48.626+0000] {logging_mixin.py:190} INFO - sensor.fc_consumo_semana_passada: 0.0
+[2025-02-28T22:12:48.626+0000] {logging_mixin.py:190} INFO - sensor.fc_consumo_mes_passado: 0.0
+[2025-02-28T22:12:48.627+0000] {logging_mixin.py:190} INFO - sensor.fc_custo_hoje: unknown
+[2025-02-28T22:12:48.627+0000] {logging_mixin.py:190} INFO - sensor.fc_custo_semanal: unknown
+[2025-02-28T22:12:48.628+0000] {logging_mixin.py:190} INFO - sensor.fc_custo_mensal: unknown
+[2025-02-28T22:12:48.628+0000] {logging_mixin.py:190} INFO - sensor.fc_custo_ontem: unknown
+[2025-02-28T22:12:48.628+0000] {logging_mixin.py:190} INFO - sensor.fc_custo_semana_passada: unknown
+[2025-02-28T22:12:48.629+0000] {logging_mixin.py:190} INFO - sensor.fc_custo_mes_passado: unknown
+[2025-02-28T22:12:48.629+0000] {logging_mixin.py:190} INFO - sensor.abc_custo_diario: unknown
+[2025-02-28T22:12:48.630+0000] {logging_mixin.py:190} INFO - sensor.abc_custo_semanal_2: unknown
+[2025-02-28T22:12:48.630+0000] {logging_mixin.py:190} INFO - sensor.abc_custo_mensal_2: unknown
+[2025-02-28T22:12:48.630+0000] {logging_mixin.py:190} INFO - sensor.abc_custo_ontem: unknown
+[2025-02-28T22:12:48.631+0000] {logging_mixin.py:190} INFO - sensor.abc_custo_semana_passada: unknown
+[2025-02-28T22:12:48.631+0000] {logging_mixin.py:190} INFO - sensor.abc_custo_mes_passado: unknown
+[2025-02-28T22:12:48.632+0000] {logging_mixin.py:190} INFO - sensor.abc_consumo_diario: 4.3
+[2025-02-28T22:12:48.632+0000] {logging_mixin.py:190} INFO - sensor.abc_consumo_semanal: 27.1
+[2025-02-28T22:12:48.632+0000] {logging_mixin.py:190} INFO - sensor.abc_consumo_mensal: 138.6
+[2025-02-28T22:12:48.633+0000] {logging_mixin.py:190} INFO - sensor.abc_consumo_ontem: 6.0
+[2025-02-28T22:12:48.633+0000] {logging_mixin.py:190} INFO - sensor.abc_consumo_semana_passada: 37.2
+[2025-02-28T22:12:48.634+0000] {logging_mixin.py:190} INFO - sensor.abc_consumo_mes_passado: 60.1
+[2025-02-28T22:12:48.634+0000] {logging_mixin.py:190} INFO - sensor.consumo_filter_chuveiro: 0
+[2025-02-28T22:12:48.634+0000] {logging_mixin.py:190} INFO - sensor.consumo_filter_ar_condicionado: 0
+[2025-02-28T22:12:48.635+0000] {logging_mixin.py:190} INFO - conversation.home_assistant: unknown
+[2025-02-28T22:12:48.635+0000] {logging_mixin.py:190} INFO - sun.sun: below_horizon
+[2025-02-28T22:12:48.636+0000] {logging_mixin.py:190} INFO - sensor.sun_next_dawn: 2025-03-01T08:55:22+00:00
+[2025-02-28T22:12:48.636+0000] {logging_mixin.py:190} INFO - sensor.sun_next_dusk: 2025-02-28T22:14:48+00:00
+[2025-02-28T22:12:48.637+0000] {logging_mixin.py:190} INFO - sensor.sun_next_midnight: 2025-03-01T03:34:50+00:00
+[2025-02-28T22:12:48.637+0000] {logging_mixin.py:190} INFO - sensor.sun_next_noon: 2025-03-01T15:34:57+00:00
+[2025-02-28T22:12:48.637+0000] {logging_mixin.py:190} INFO - sensor.sun_next_rising: 2025-03-01T09:18:37+00:00
+[2025-02-28T22:12:48.638+0000] {logging_mixin.py:190} INFO - sensor.sun_next_setting: 2025-03-01T21:50:42+00:00
+[2025-02-28T22:12:48.638+0000] {logging_mixin.py:190} INFO - tts.google_translate_en_com: unknown
+[2025-02-28T22:12:48.639+0000] {logging_mixin.py:190} INFO - binary_sensor.rpi_power_status: off
+[2025-02-28T22:12:48.639+0000] {logging_mixin.py:190} INFO - todo.shopping_list: 0
+[2025-02-28T22:12:48.639+0000] {logging_mixin.py:190} INFO - sensor.consumo_pc_diario: 0.85
+[2025-02-28T22:12:48.640+0000] {logging_mixin.py:190} INFO - sensor.consumo_daily_chuveiro: 0.85
+[2025-02-28T22:12:48.640+0000] {logging_mixin.py:190} INFO - sensor.consumo_weekly_chuveiro: 1.44
+[2025-02-28T22:12:48.641+0000] {logging_mixin.py:190} INFO - sensor.consumo_monthly_chuveiro: 1.44
+[2025-02-28T22:12:48.641+0000] {logging_mixin.py:190} INFO - sensor.consumo_daily_ar: 0
+[2025-02-28T22:12:48.642+0000] {logging_mixin.py:190} INFO - sensor.consumo_weekly_ar: 0.12
+[2025-02-28T22:12:48.642+0000] {logging_mixin.py:190} INFO - sensor.consumo_monthly_ar: 0.12
+[2025-02-28T22:12:48.643+0000] {logging_mixin.py:190} INFO - sensor.consumo_pc_semanal: 6.18
+[2025-02-28T22:12:48.643+0000] {logging_mixin.py:190} INFO - sensor.consumo_pc_mensal: 6.18
+[2025-02-28T22:12:48.643+0000] {logging_mixin.py:190} INFO - sensor.consumo_vent_diario: 1.73
+[2025-02-28T22:12:48.644+0000] {logging_mixin.py:190} INFO - sensor.consumo_vent_semanal: 5.51
+[2025-02-28T22:12:48.644+0000] {logging_mixin.py:190} INFO - sensor.consumo_vent_mensal: 5.51
+[2025-02-28T22:12:48.645+0000] {logging_mixin.py:190} INFO - sensor.consumo_gel_diario: 1.21
+[2025-02-28T22:12:48.645+0000] {logging_mixin.py:190} INFO - sensor.consumo_gel_semanal: 4.08
+[2025-02-28T22:12:48.646+0000] {logging_mixin.py:190} INFO - sensor.consumo_gel_mensal: 4.08
+[2025-02-28T22:12:48.646+0000] {logging_mixin.py:190} INFO - sensor.fa_consumo_hoje_default: 2.9
+[2025-02-28T22:12:48.646+0000] {logging_mixin.py:190} INFO - sensor.fa_consumo_semana_default: 18.9
+[2025-02-28T22:12:48.647+0000] {logging_mixin.py:190} INFO - sensor.fa_consumo_mes_default: 95.1
+[2025-02-28T22:12:48.647+0000] {logging_mixin.py:190} INFO - sensor.fb_consumo_hoje_default: 1.4
+[2025-02-28T22:12:48.648+0000] {logging_mixin.py:190} INFO - sensor.fb_consumo_semana_default: 8.5
+[2025-02-28T22:12:48.648+0000] {logging_mixin.py:190} INFO - sensor.fb_consumo_mes_default: 43.8
+[2025-02-28T22:12:48.648+0000] {logging_mixin.py:190} INFO - sensor.fc_consumo_hoje_default: 0
+[2025-02-28T22:12:48.649+0000] {logging_mixin.py:190} INFO - sensor.fc_consumo_semana_default: 0
+[2025-02-28T22:12:48.649+0000] {logging_mixin.py:190} INFO - sensor.fc_consumo_mes_default: 0
+[2025-02-28T22:12:48.650+0000] {logging_mixin.py:190} INFO - sensor.abc_consumo_hoje_default: 4.3
+[2025-02-28T22:12:48.650+0000] {logging_mixin.py:190} INFO - sensor.abc_consumo_semana_default: 27.1
+[2025-02-28T22:12:48.650+0000] {logging_mixin.py:190} INFO - sensor.abc_consumo_mes_default: 138.6
+[2025-02-28T22:12:48.651+0000] {logging_mixin.py:190} INFO - select.fa_consumo_hoje: default
+[2025-02-28T22:12:48.651+0000] {logging_mixin.py:190} INFO - select.fa_consumo_semana: default
+[2025-02-28T22:12:48.651+0000] {logging_mixin.py:190} INFO - select.fa_consumo_mes: default
+[2025-02-28T22:12:48.652+0000] {logging_mixin.py:190} INFO - select.fb_consumo_hoje: default
+[2025-02-28T22:12:48.652+0000] {logging_mixin.py:190} INFO - select.fb_consumo_semana: default
+[2025-02-28T22:12:48.653+0000] {logging_mixin.py:190} INFO - select.fb_consumo_mes: default
+[2025-02-28T22:12:48.653+0000] {logging_mixin.py:190} INFO - select.fc_consumo_hoje: default
+[2025-02-28T22:12:48.653+0000] {logging_mixin.py:190} INFO - select.fc_consumo_semana: default
+[2025-02-28T22:12:48.654+0000] {logging_mixin.py:190} INFO - select.fc_consumo_mes: default
+[2025-02-28T22:12:48.654+0000] {logging_mixin.py:190} INFO - select.abc_consumo_hoje: default
+[2025-02-28T22:12:48.655+0000] {logging_mixin.py:190} INFO - select.abc_consumo_semana: default
+[2025-02-28T22:12:48.655+0000] {logging_mixin.py:190} INFO - select.abc_consumo_mes: default
+[2025-02-28T22:12:48.656+0000] {logging_mixin.py:190} INFO - sensor.medidor_cornelio_status: "on"
+[2025-02-28T22:12:48.656+0000] {logging_mixin.py:190} INFO - sensor.medidor_cornelio_uptime: 0
+[2025-02-28T22:12:48.656+0000] {logging_mixin.py:190} INFO - sensor.medidor_cornelio_sinal_wifi: -60
+[2025-02-28T22:12:48.657+0000] {logging_mixin.py:190} INFO - sensor.medidor_cornelio_temperatura: -328
+[2025-02-28T22:12:48.657+0000] {logging_mixin.py:190} INFO - sensor.medidor_cornelio_frequencia: 60
+[2025-02-28T22:12:48.658+0000] {logging_mixin.py:190} INFO - sensor.fa_tensao: 124
+[2025-02-28T22:12:48.658+0000] {logging_mixin.py:190} INFO - sensor.fa_corrente: 2.6
+[2025-02-28T22:12:48.659+0000] {logging_mixin.py:190} INFO - sensor.fa_potencia_ativa: 314
+[2025-02-28T22:12:48.659+0000] {logging_mixin.py:190} INFO - sensor.fa_potencia_aparente: 318
+[2025-02-28T22:12:48.659+0000] {logging_mixin.py:190} INFO - sensor.fa_potencia_reativa: -54
+[2025-02-28T22:12:48.660+0000] {logging_mixin.py:190} INFO - sensor.fa_fator_potencia: -0.99
+[2025-02-28T22:12:48.660+0000] {logging_mixin.py:190} INFO - sensor.fa_kwh_total: 0.3
+[2025-02-28T22:12:48.661+0000] {logging_mixin.py:190} INFO - sensor.fa_consumo_ativo_total: 1136.7
+[2025-02-28T22:12:48.661+0000] {logging_mixin.py:190} INFO - sensor.fa_consumo_reativo_total: -171.4
+[2025-02-28T22:12:48.662+0000] {logging_mixin.py:190} INFO - sensor.fb_tensao: 125
+[2025-02-28T22:12:48.662+0000] {logging_mixin.py:190} INFO - sensor.fb_corrente: 1.3
+[2025-02-28T22:12:48.662+0000] {logging_mixin.py:190} INFO - sensor.fb_potencia_ativa: 106
+[2025-02-28T22:12:48.663+0000] {logging_mixin.py:190} INFO - sensor.fb_potencia_aparente: 157
+[2025-02-28T22:12:48.663+0000] {logging_mixin.py:190} INFO - sensor.fb_potencia_reativa: 116
+[2025-02-28T22:12:48.664+0000] {logging_mixin.py:190} INFO - sensor.fb_fator_potencia: 0.68
+[2025-02-28T22:12:48.664+0000] {logging_mixin.py:190} INFO - sensor.fb_kwh_total: 0.1
+[2025-02-28T22:12:48.665+0000] {logging_mixin.py:190} INFO - sensor.fb_consumo_ativo_total: 2302.5
+[2025-02-28T22:12:48.665+0000] {logging_mixin.py:190} INFO - sensor.fb_consumo_reativo_total: 2334.1
+[2025-02-28T22:12:48.665+0000] {logging_mixin.py:190} INFO - sensor.fc_tensao: 0
+[2025-02-28T22:12:48.666+0000] {logging_mixin.py:190} INFO - sensor.fc_corrente: 0.0
+[2025-02-28T22:12:48.666+0000] {logging_mixin.py:190} INFO - sensor.fc_potencia_ativa: 0
+[2025-02-28T22:12:48.667+0000] {logging_mixin.py:190} INFO - sensor.fc_potencia_aparente: 0
+[2025-02-28T22:12:48.667+0000] {logging_mixin.py:190} INFO - sensor.fc_potencia_reativa: 0
+[2025-02-28T22:12:48.667+0000] {logging_mixin.py:190} INFO - sensor.fc_fator_potencia: 1.0
+[2025-02-28T22:12:48.668+0000] {logging_mixin.py:190} INFO - sensor.fc_kwh_total: 0.0
+[2025-02-28T22:12:48.668+0000] {logging_mixin.py:190} INFO - sensor.fc_consumo_ativo_total: 0.0
+[2025-02-28T22:12:48.669+0000] {logging_mixin.py:190} INFO - sensor.fc_consumo_reativo_total: 0.0
+[2025-02-28T22:12:48.669+0000] {logging_mixin.py:190} INFO - sensor.abc_tensao: 215
+[2025-02-28T22:12:48.669+0000] {logging_mixin.py:190} INFO - sensor.abc_corrente: 3.7
+[2025-02-28T22:12:48.670+0000] {logging_mixin.py:190} INFO - sensor.abc_potencia_ativa: 420
+[2025-02-28T22:12:48.670+0000] {logging_mixin.py:190} INFO - sensor.abc_potencia_aparente: 424
+[2025-02-28T22:12:48.671+0000] {logging_mixin.py:190} INFO - sensor.abc_potencia_reativa: 62
+[2025-02-28T22:12:48.671+0000] {logging_mixin.py:190} INFO - sensor.abc_fator_potencia: 0.99
+[2025-02-28T22:12:48.671+0000] {logging_mixin.py:190} INFO - sensor.abc_kwh_total: 0.4
+[2025-02-28T22:12:48.672+0000] {logging_mixin.py:190} INFO - sensor.abc_consumo_ativo_total: 3439.1
+[2025-02-28T22:12:48.672+0000] {logging_mixin.py:190} INFO - sensor.abc_consumo_reativo_total: 2162.7
+[2025-02-28T22:12:48.673+0000] {logging_mixin.py:190} INFO - weather.forecast_home: partlycloudy
+[2025-02-28T22:12:48.673+0000] {logging_mixin.py:190} INFO - light.smart_bulb: unavailable
+[2025-02-28T22:12:48.673+0000] {logging_mixin.py:190} INFO - select.smart_plug_10a_power_on_behavior: unavailable
+[2025-02-28T22:12:48.674+0000] {logging_mixin.py:190} INFO - select.smart_plug_10a_indicator_light_mode: unavailable
+[2025-02-28T22:12:48.674+0000] {logging_mixin.py:190} INFO - sensor.tomada_cozinha_current: 1.0
+[2025-02-28T22:12:48.675+0000] {logging_mixin.py:190} INFO - sensor.tomada_cozinha_power: 123.4
+[2025-02-28T22:12:48.675+0000] {logging_mixin.py:190} INFO - sensor.tomada_cozinha_voltage: 123.3
+[2025-02-28T22:12:48.676+0000] {logging_mixin.py:190} INFO - sensor.tomada_pc_current: 1.433
+[2025-02-28T22:12:48.677+0000] {logging_mixin.py:190} INFO - sensor.tomada_pc_power: 176.1
+[2025-02-28T22:12:48.677+0000] {logging_mixin.py:190} INFO - sensor.tomada_pc_voltage: 124.1
+[2025-02-28T22:12:48.678+0000] {logging_mixin.py:190} INFO - sensor.tomada_geladeira_current: 1.391
+[2025-02-28T22:12:48.678+0000] {logging_mixin.py:190} INFO - sensor.tomada_geladeira_power: 108.2
+[2025-02-28T22:12:48.678+0000] {logging_mixin.py:190} INFO - sensor.tomada_geladeira_voltage: 124.4
+[2025-02-28T22:12:48.679+0000] {logging_mixin.py:190} INFO - switch.tomada_cozinha_socket_1: on
+[2025-02-28T22:12:48.679+0000] {logging_mixin.py:190} INFO - switch.tomada_pc_socket_1: on
+[2025-02-28T22:12:48.679+0000] {logging_mixin.py:190} INFO - switch.tomada_geladeira_socket_1: on
+[2025-02-28T22:12:48.680+0000] {logging_mixin.py:190} INFO - switch.smart_plug_10a_child_lock: unavailable
+[2025-02-28T22:12:48.680+0000] {logging_mixin.py:190} INFO - switch.smart_plug_10a_socket_1: unavailable
+[2025-02-28T22:12:48.681+0000] {logging_mixin.py:190} INFO - 📦 Extraindo histórico da entidade sensor.abc_consumo_ativo_total...
+[2025-02-28T22:12:48.874+0000] {logging_mixin.py:190} INFO - None
+[2025-02-28T22:12:48.973+0000] {logging_mixin.py:190} INFO - None
+[2025-02-28T22:12:48.993+0000] {logging_mixin.py:190} INFO - None
+[2025-02-28T22:12:48.994+0000] {logging_mixin.py:190} INFO - ⚠️ Nenhum dado retornado.
+[2025-02-28T22:12:49.002+0000] {logging_mixin.py:190} INFO - None
+[2025-02-28T22:12:49.002+0000] {logging_mixin.py:190} INFO - ⚠️ Nenhum dado retornado.
+[2025-02-28T22:12:49.010+0000] {logging_mixin.py:190} INFO - None
+[2025-02-28T22:12:49.010+0000] {logging_mixin.py:190} INFO - ⚠️ Nenhum dado retornado.
+[2025-02-28T22:12:49.017+0000] {logging_mixin.py:190} INFO - None
+[2025-02-28T22:12:49.018+0000] {logging_mixin.py:190} INFO - ⚠️ Nenhum dado retornado.
+[2025-02-28T22:12:49.023+0000] {logging_mixin.py:190} INFO - None
+[2025-02-28T22:12:49.024+0000] {logging_mixin.py:190} INFO - ⚠️ Nenhum dado retornado.
+[2025-02-28T22:12:49.030+0000] {logging_mixin.py:190} INFO - None
+[2025-02-28T22:12:49.030+0000] {logging_mixin.py:190} INFO - ⚠️ Nenhum dado retornado.
+[2025-02-28T22:12:49.036+0000] {logging_mixin.py:190} INFO - None
+[2025-02-28T22:12:49.037+0000] {logging_mixin.py:190} INFO - ⚠️ Nenhum dado retornado.
+[2025-02-28T22:12:49.043+0000] {logging_mixin.py:190} INFO - None
+[2025-02-28T22:12:49.044+0000] {logging_mixin.py:190} INFO - ⚠️ Nenhum dado retornado.
+[2025-02-28T22:12:49.051+0000] {logging_mixin.py:190} INFO - None
+[2025-02-28T22:12:49.052+0000] {logging_mixin.py:190} INFO - ⚠️ Nenhum dado retornado.
+[2025-02-28T22:12:49.059+0000] {logging_mixin.py:190} INFO - None
+[2025-02-28T22:12:49.059+0000] {logging_mixin.py:190} INFO - ⚠️ Nenhum dado retornado.
+[2025-02-28T22:12:49.066+0000] {logging_mixin.py:190} INFO - None
+[2025-02-28T22:12:49.066+0000] {logging_mixin.py:190} INFO - ⚠️ Nenhum dado retornado.
+[2025-02-28T22:12:49.072+0000] {logging_mixin.py:190} INFO - None
+[2025-02-28T22:12:49.073+0000] {logging_mixin.py:190} INFO - ⚠️ Nenhum dado retornado.
+[2025-02-28T22:12:49.079+0000] {logging_mixin.py:190} INFO - None
+[2025-02-28T22:12:49.079+0000] {logging_mixin.py:190} INFO - ⚠️ Nenhum dado retornado.
+[2025-02-28T22:12:49.085+0000] {logging_mixin.py:190} INFO - None
+[2025-02-28T22:12:49.086+0000] {logging_mixin.py:190} INFO - ⚠️ Nenhum dado retornado.
+[2025-02-28T22:12:49.091+0000] {logging_mixin.py:190} INFO - None
+[2025-02-28T22:12:49.092+0000] {logging_mixin.py:190} INFO - ⚠️ Nenhum dado retornado.
+[2025-02-28T22:12:49.098+0000] {logging_mixin.py:190} INFO - None
+[2025-02-28T22:12:49.099+0000] {logging_mixin.py:190} INFO - ⚠️ Nenhum dado retornado.
+[2025-02-28T22:12:49.105+0000] {logging_mixin.py:190} INFO - None
+[2025-02-28T22:12:49.106+0000] {logging_mixin.py:190} INFO - ⚠️ Nenhum dado retornado.
+[2025-02-28T22:12:49.113+0000] {logging_mixin.py:190} INFO - None
+[2025-02-28T22:12:49.114+0000] {logging_mixin.py:190} INFO - ⚠️ Nenhum dado retornado.
+[2025-02-28T22:12:49.120+0000] {logging_mixin.py:190} INFO - None
+[2025-02-28T22:12:49.121+0000] {logging_mixin.py:190} INFO - ⚠️ Nenhum dado retornado.
+[2025-02-28T22:12:49.127+0000] {logging_mixin.py:190} INFO - None
+[2025-02-28T22:12:49.127+0000] {logging_mixin.py:190} INFO - ⚠️ Nenhum dado retornado.
+[2025-02-28T22:12:49.134+0000] {logging_mixin.py:190} INFO - None
+[2025-02-28T22:12:49.135+0000] {logging_mixin.py:190} INFO - ⚠️ Nenhum dado retornado.
+[2025-02-28T22:12:49.141+0000] {logging_mixin.py:190} INFO - None
+[2025-02-28T22:12:49.142+0000] {logging_mixin.py:190} INFO - ⚠️ Nenhum dado retornado.
+[2025-02-28T22:12:49.149+0000] {logging_mixin.py:190} INFO - None
+[2025-02-28T22:12:49.149+0000] {logging_mixin.py:190} INFO - ⚠️ Nenhum dado retornado.
+[2025-02-28T22:12:49.156+0000] {logging_mixin.py:190} INFO - None
+[2025-02-28T22:12:49.156+0000] {logging_mixin.py:190} INFO - ⚠️ Nenhum dado retornado.
+[2025-02-28T22:12:49.163+0000] {logging_mixin.py:190} INFO - None
+[2025-02-28T22:12:49.164+0000] {logging_mixin.py:190} INFO - ⚠️ Nenhum dado retornado.
+[2025-02-28T22:12:49.173+0000] {logging_mixin.py:190} INFO - None
+[2025-02-28T22:12:49.174+0000] {logging_mixin.py:190} INFO - ⚠️ Nenhum dado retornado.
+[2025-02-28T22:12:49.180+0000] {logging_mixin.py:190} INFO - None
+[2025-02-28T22:12:49.181+0000] {logging_mixin.py:190} INFO - ⚠️ Nenhum dado retornado.
+[2025-02-28T22:12:49.187+0000] {logging_mixin.py:190} INFO - None
+[2025-02-28T22:12:49.188+0000] {logging_mixin.py:190} INFO - ⚠️ Nenhum dado retornado.
+[2025-02-28T22:12:49.195+0000] {logging_mixin.py:190} INFO - None
+[2025-02-28T22:12:49.195+0000] {logging_mixin.py:190} INFO - ⚠️ Nenhum dado retornado.
+[2025-02-28T22:12:49.202+0000] {logging_mixin.py:190} INFO - None
+[2025-02-28T22:12:49.203+0000] {logging_mixin.py:190} INFO - ⚠️ Nenhum dado retornado.
+[2025-02-28T22:12:49.209+0000] {logging_mixin.py:190} INFO - None
+[2025-02-28T22:12:49.209+0000] {logging_mixin.py:190} INFO - ⚠️ Nenhum dado retornado.
+[2025-02-28T22:12:49.216+0000] {logging_mixin.py:190} INFO - None
+[2025-02-28T22:12:49.216+0000] {logging_mixin.py:190} INFO - ⚠️ Nenhum dado retornado.
+[2025-02-28T22:12:49.230+0000] {logging_mixin.py:190} INFO -                          last_changed   state
+0    2025-01-17 07:19:04.952900+00:00  3257.6
+1    2025-01-17 09:39:45.375743+00:00  3257.7
+2    2025-01-17 10:38:05.550601+00:00  3257.8
+3    2025-01-17 12:58:30.961625+00:00  3257.9
+4    2025-01-17 15:19:11.370100+00:00  3258.0
+...                               ...     ...
+1723 2025-02-28 21:09:12.870680+00:00     NaN
+1724 2025-02-28 21:09:16.759974+00:00  3438.8
+1725 2025-02-28 22:09:16.999551+00:00     NaN
+1726 2025-02-28 22:09:17.420023+00:00     NaN
+1727 2025-02-28 22:09:22.739432+00:00  3439.1
+
+[1980 rows x 2 columns]
+[2025-02-28T22:12:49.232+0000] {logging_mixin.py:190} INFO - ✅ 1850 registros extraídos.
+[2025-02-28T22:12:49.255+0000] {logging_mixin.py:190} INFO - 📁 Dados salvos em /tmp/raw_data_2.csv
+[2025-02-28T22:12:49.255+0000] {logging_mixin.py:190} INFO - ❌ Erro na extração dos dados: DataFrame index must be unique for orient='columns'.
+[2025-02-28T22:12:49.256+0000] {taskinstance.py:3313} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 768, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 734, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 424, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/ha_etl_process.py", line 151, in extract_data
+    return history.to_json()
+           ^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/core/generic.py", line 2629, in to_json
+    return json.to_json(
+           ^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/io/json/_json.py", line 195, in to_json
+    s = writer(
+        ^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/io/json/_json.py", line 251, in __init__
+    self._format_axes()
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/io/json/_json.py", line 307, in _format_axes
+    raise ValueError(
+ValueError: DataFrame index must be unique for orient='columns'.
+[2025-02-28T22:12:49.282+0000] {logging_mixin.py:190} INFO - Task instance in failure state
+[2025-02-28T22:12:49.283+0000] {logging_mixin.py:190} INFO - Task start:2025-02-28 22:12:48.401513+00:00 end:2025-02-28 22:12:49.282134+00:00 duration:0.880621
+[2025-02-28T22:12:49.283+0000] {logging_mixin.py:190} INFO - Task:<Task(PythonOperator): extract_task> dag:<DAG: ha_etl_process> dagrun:<DagRun ha_etl_process @ 2025-02-28 22:12:46.826175+00:00: manual__2025-02-28T22:12:46.826175+00:00, state:running, queued_at: 2025-02-28 22:12:46.841844+00:00. externally triggered: True>
+[2025-02-28T22:12:49.284+0000] {logging_mixin.py:190} INFO - Failure caused by DataFrame index must be unique for orient='columns'.
+[2025-02-28T22:12:49.285+0000] {taskinstance.py:1226} INFO - Marking task as UP_FOR_RETRY. dag_id=ha_etl_process, task_id=extract_task, run_id=manual__2025-02-28T22:12:46.826175+00:00, execution_date=20250228T221246, start_date=20250228T221248, end_date=20250228T221249
+[2025-02-28T22:12:49.323+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-02-28T22:12:49.323+0000] {standard_task_runner.py:124} ERROR - Failed to execute job 154 for task extract_task (DataFrame index must be unique for orient='columns'.; 1079)
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py", line 117, in _start_by_fork
+    ret = args.func(args, dag=self.dag)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/cli.py", line 116, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 483, in task_run
+    task_return_code = _run_task_by_selected_method(args, _dag, ti)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 256, in _run_task_by_selected_method
+    return _run_raw_task(args, ti)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 341, in _run_raw_task
+    return ti._run_raw_task(
+           ^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3006, in _run_raw_task
+    return _run_raw_task(
+           ^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 274, in _run_raw_task
+    TaskInstance._execute_task_with_callbacks(
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3161, in _execute_task_with_callbacks
+    result = self._execute_task(context, task_orig)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3185, in _execute_task
+    return _execute_task(self, context, task_orig)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 768, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 734, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 424, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/ha_etl_process.py", line 151, in extract_data
+    return history.to_json()
+           ^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/core/generic.py", line 2629, in to_json
+    return json.to_json(
+           ^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/io/json/_json.py", line 195, in to_json
+    s = writer(
+        ^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/io/json/_json.py", line 251, in __init__
+    self._format_axes()
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/io/json/_json.py", line 307, in _format_axes
+    raise ValueError(
+ValueError: DataFrame index must be unique for orient='columns'.
+[2025-02-28T22:12:49.343+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 1
+[2025-02-28T22:12:49.370+0000] {taskinstance.py:3901} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-02-28T22:12:49.377+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

@@ -1,0 +1,147 @@
+[2025-02-28T21:41:15.577+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-02-28T21:41:15.599+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ha_etl_process.extract_task manual__2025-02-28T21:41:13.810506+00:00 [queued]>
+[2025-02-28T21:41:15.611+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ha_etl_process.extract_task manual__2025-02-28T21:41:13.810506+00:00 [queued]>
+[2025-02-28T21:41:15.612+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 2
+[2025-02-28T21:41:15.630+0000] {taskinstance.py:2890} INFO - Executing <Task(PythonOperator): extract_task> on 2025-02-28 21:41:13.810506+00:00
+[2025-02-28T21:41:15.638+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'ha_etl_process', 'extract_task', 'manual__2025-02-28T21:41:13.810506+00:00', '--job-id', '132', '--raw', '--subdir', 'DAGS_FOLDER/ha_etl_process.py', '--cfg-path', '/tmp/tmp3n5frzyw']
+[2025-02-28T21:41:15.640+0000] {standard_task_runner.py:105} INFO - Job 132: Subtask extract_task
+[2025-02-28T21:41:15.644+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=1416) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-02-28T21:41:15.645+0000] {standard_task_runner.py:72} INFO - Started process 1417 to run task
+[2025-02-28T21:41:15.705+0000] {task_command.py:467} INFO - Running <TaskInstance: ha_etl_process.extract_task manual__2025-02-28T21:41:13.810506+00:00 [running]> on host 151d4861bf1b
+[2025-02-28T21:41:15.800+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='ha_etl_process' AIRFLOW_CTX_TASK_ID='extract_task' AIRFLOW_CTX_EXECUTION_DATE='2025-02-28T21:41:13.810506+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-02-28T21:41:13.810506+00:00'
+[2025-02-28T21:41:15.802+0000] {logging_mixin.py:190} INFO - Task instance is in running state
+[2025-02-28T21:41:15.802+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2025-02-28T21:41:15.803+0000] {logging_mixin.py:190} INFO - Current task name:extract_task state:running start_date:2025-02-28 21:41:15.600306+00:00
+[2025-02-28T21:41:15.804+0000] {logging_mixin.py:190} INFO - Dag name:ha_etl_process and current dag run status:running
+[2025-02-28T21:41:15.805+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2025-02-28T21:41:15.806+0000] {logging_mixin.py:190} INFO - 🔍 Tentando se conectar ao Home Assistant...
+[2025-02-28T21:41:15.807+0000] {logging_mixin.py:190} INFO - 📦 Extraindo histórico da entidade sensor.abc_consumo_ativo_total...
+[2025-02-28T21:41:25.824+0000] {logging_mixin.py:190} INFO - ❌ Erro de conexão: HTTPConnectionPool(host='192.168.1.110', port=8123): Max retries exceeded with url: /api/history/period/2025-01-29T21:41:15.808218+00:00?end_time=2025-02-28T21%3A41%3A15.808218%2B00%3A00&filter_entity_id=sensor.abc_consumo_ativo_total (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x7fbde10eb8f0>, 'Connection to 192.168.1.110 timed out. (connect timeout=10)'))
+[2025-02-28T21:41:35.839+0000] {logging_mixin.py:190} INFO - ❌ Erro de conexão: HTTPConnectionPool(host='192.168.1.110', port=8123): Max retries exceeded with url: /api/history/period/2024-12-30T21:41:15.808217+00:00?end_time=2025-01-29T21%3A41%3A15.808217%2B00%3A00&filter_entity_id=sensor.abc_consumo_ativo_total (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x7fbddecad2b0>, 'Connection to 192.168.1.110 timed out. (connect timeout=10)'))
+[2025-02-28T21:41:45.850+0000] {logging_mixin.py:190} INFO - ❌ Erro de conexão: HTTPConnectionPool(host='192.168.1.110', port=8123): Max retries exceeded with url: /api/history/period/2024-11-30T21:41:15.808216+00:00?end_time=2024-12-30T21%3A41%3A15.808216%2B00%3A00&filter_entity_id=sensor.abc_consumo_ativo_total (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x7fbddecadb50>, 'Connection to 192.168.1.110 timed out. (connect timeout=10)'))
+[2025-02-28T21:41:55.865+0000] {logging_mixin.py:190} INFO - ❌ Erro de conexão: HTTPConnectionPool(host='192.168.1.110', port=8123): Max retries exceeded with url: /api/history/period/2024-10-31T21:41:15.808215+00:00?end_time=2024-11-30T21%3A41%3A15.808215%2B00%3A00&filter_entity_id=sensor.abc_consumo_ativo_total (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x7fbddecae270>, 'Connection to 192.168.1.110 timed out. (connect timeout=10)'))
+[2025-02-28T21:42:05.880+0000] {logging_mixin.py:190} INFO - ❌ Erro de conexão: HTTPConnectionPool(host='192.168.1.110', port=8123): Max retries exceeded with url: /api/history/period/2024-10-01T21:41:15.808214+00:00?end_time=2024-10-31T21%3A41%3A15.808214%2B00%3A00&filter_entity_id=sensor.abc_consumo_ativo_total (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x7fbddecaeb10>, 'Connection to 192.168.1.110 timed out. (connect timeout=10)'))
+[2025-02-28T21:42:15.884+0000] {logging_mixin.py:190} INFO - ❌ Erro de conexão: HTTPConnectionPool(host='192.168.1.110', port=8123): Max retries exceeded with url: /api/history/period/2024-09-01T21:41:15.808213+00:00?end_time=2024-10-01T21%3A41%3A15.808213%2B00%3A00&filter_entity_id=sensor.abc_consumo_ativo_total (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x7fbddecaf0e0>, 'Connection to 192.168.1.110 timed out. (connect timeout=10)'))
+[2025-02-28T21:42:25.897+0000] {logging_mixin.py:190} INFO - ❌ Erro de conexão: HTTPConnectionPool(host='192.168.1.110', port=8123): Max retries exceeded with url: /api/history/period/2024-08-02T21:41:15.808212+00:00?end_time=2024-09-01T21%3A41%3A15.808212%2B00%3A00&filter_entity_id=sensor.abc_consumo_ativo_total (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x7fbddecaf0e0>, 'Connection to 192.168.1.110 timed out. (connect timeout=10)'))
+[2025-02-28T21:42:35.902+0000] {logging_mixin.py:190} INFO - ❌ Erro de conexão: HTTPConnectionPool(host='192.168.1.110', port=8123): Max retries exceeded with url: /api/history/period/2024-07-03T21:41:15.808211+00:00?end_time=2024-08-02T21%3A41%3A15.808211%2B00%3A00&filter_entity_id=sensor.abc_consumo_ativo_total (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x7fbddecae750>, 'Connection to 192.168.1.110 timed out. (connect timeout=10)'))
+[2025-02-28T21:42:45.913+0000] {logging_mixin.py:190} INFO - ❌ Erro de conexão: HTTPConnectionPool(host='192.168.1.110', port=8123): Max retries exceeded with url: /api/history/period/2024-06-03T21:41:15.808210+00:00?end_time=2024-07-03T21%3A41%3A15.808210%2B00%3A00&filter_entity_id=sensor.abc_consumo_ativo_total (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x7fbddecadb20>, 'Connection to 192.168.1.110 timed out. (connect timeout=10)'))
+[2025-02-28T21:42:55.927+0000] {logging_mixin.py:190} INFO - ❌ Erro de conexão: HTTPConnectionPool(host='192.168.1.110', port=8123): Max retries exceeded with url: /api/history/period/2024-05-04T21:41:15.808209+00:00?end_time=2024-06-03T21%3A41%3A15.808209%2B00%3A00&filter_entity_id=sensor.abc_consumo_ativo_total (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x7fbddecada60>, 'Connection to 192.168.1.110 timed out. (connect timeout=10)'))
+[2025-02-28T21:43:05.942+0000] {logging_mixin.py:190} INFO - ❌ Erro de conexão: HTTPConnectionPool(host='192.168.1.110', port=8123): Max retries exceeded with url: /api/history/period/2024-04-04T21:41:15.808208+00:00?end_time=2024-05-04T21%3A41%3A15.808208%2B00%3A00&filter_entity_id=sensor.abc_consumo_ativo_total (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x7fbddecd0200>, 'Connection to 192.168.1.110 timed out. (connect timeout=10)'))
+[2025-02-28T21:43:15.954+0000] {logging_mixin.py:190} INFO - ❌ Erro de conexão: HTTPConnectionPool(host='192.168.1.110', port=8123): Max retries exceeded with url: /api/history/period/2024-03-05T21:41:15.808207+00:00?end_time=2024-04-04T21%3A41%3A15.808207%2B00%3A00&filter_entity_id=sensor.abc_consumo_ativo_total (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x7fbddecd0bf0>, 'Connection to 192.168.1.110 timed out. (connect timeout=10)'))
+[2025-02-28T21:43:25.974+0000] {logging_mixin.py:190} INFO - ❌ Erro de conexão: HTTPConnectionPool(host='192.168.1.110', port=8123): Max retries exceeded with url: /api/history/period/2024-02-04T21:41:15.808206+00:00?end_time=2024-03-05T21%3A41%3A15.808206%2B00%3A00&filter_entity_id=sensor.abc_consumo_ativo_total (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x7fbddec6e000>, 'Connection to 192.168.1.110 timed out. (connect timeout=10)'))
+[2025-02-28T21:43:35.989+0000] {logging_mixin.py:190} INFO - ❌ Erro de conexão: HTTPConnectionPool(host='192.168.1.110', port=8123): Max retries exceeded with url: /api/history/period/2024-01-05T21:41:15.808205+00:00?end_time=2024-02-04T21%3A41%3A15.808205%2B00%3A00&filter_entity_id=sensor.abc_consumo_ativo_total (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x7fbddecad0a0>, 'Connection to 192.168.1.110 timed out. (connect timeout=10)'))
+[2025-02-28T21:43:46.003+0000] {logging_mixin.py:190} INFO - ❌ Erro de conexão: HTTPConnectionPool(host='192.168.1.110', port=8123): Max retries exceeded with url: /api/history/period/2023-12-06T21:41:15.808204+00:00?end_time=2024-01-05T21%3A41%3A15.808204%2B00%3A00&filter_entity_id=sensor.abc_consumo_ativo_total (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x7fbddecae180>, 'Connection to 192.168.1.110 timed out. (connect timeout=10)'))
+[2025-02-28T21:43:56.018+0000] {logging_mixin.py:190} INFO - ❌ Erro de conexão: HTTPConnectionPool(host='192.168.1.110', port=8123): Max retries exceeded with url: /api/history/period/2023-11-06T21:41:15.808203+00:00?end_time=2023-12-06T21%3A41%3A15.808203%2B00%3A00&filter_entity_id=sensor.abc_consumo_ativo_total (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x7fbddecada90>, 'Connection to 192.168.1.110 timed out. (connect timeout=10)'))
+[2025-02-28T21:44:06.034+0000] {logging_mixin.py:190} INFO - ❌ Erro de conexão: HTTPConnectionPool(host='192.168.1.110', port=8123): Max retries exceeded with url: /api/history/period/2023-10-07T21:41:15.808202+00:00?end_time=2023-11-06T21%3A41%3A15.808202%2B00%3A00&filter_entity_id=sensor.abc_consumo_ativo_total (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x7fbddecac7a0>, 'Connection to 192.168.1.110 timed out. (connect timeout=10)'))
+[2025-02-28T21:44:16.038+0000] {logging_mixin.py:190} INFO - ❌ Erro de conexão: HTTPConnectionPool(host='192.168.1.110', port=8123): Max retries exceeded with url: /api/history/period/2023-09-07T21:41:15.808201+00:00?end_time=2023-10-07T21%3A41%3A15.808201%2B00%3A00&filter_entity_id=sensor.abc_consumo_ativo_total (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x7fbddecd05f0>, 'Connection to 192.168.1.110 timed out. (connect timeout=10)'))
+[2025-02-28T21:44:26.052+0000] {logging_mixin.py:190} INFO - ❌ Erro de conexão: HTTPConnectionPool(host='192.168.1.110', port=8123): Max retries exceeded with url: /api/history/period/2023-08-08T21:41:15.808200+00:00?end_time=2023-09-07T21%3A41%3A15.808200%2B00%3A00&filter_entity_id=sensor.abc_consumo_ativo_total (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x7fbddecaf800>, 'Connection to 192.168.1.110 timed out. (connect timeout=10)'))
+[2025-02-28T21:44:36.058+0000] {logging_mixin.py:190} INFO - ❌ Erro de conexão: HTTPConnectionPool(host='192.168.1.110', port=8123): Max retries exceeded with url: /api/history/period/2023-07-09T21:41:15.808199+00:00?end_time=2023-08-08T21%3A41%3A15.808199%2B00%3A00&filter_entity_id=sensor.abc_consumo_ativo_total (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x7fbddecaed20>, 'Connection to 192.168.1.110 timed out. (connect timeout=10)'))
+[2025-02-28T21:44:46.068+0000] {logging_mixin.py:190} INFO - ❌ Erro de conexão: HTTPConnectionPool(host='192.168.1.110', port=8123): Max retries exceeded with url: /api/history/period/2023-06-09T21:41:15.808198+00:00?end_time=2023-07-09T21%3A41%3A15.808198%2B00%3A00&filter_entity_id=sensor.abc_consumo_ativo_total (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x7fbddecad940>, 'Connection to 192.168.1.110 timed out. (connect timeout=10)'))
+[2025-02-28T21:44:56.083+0000] {logging_mixin.py:190} INFO - ❌ Erro de conexão: HTTPConnectionPool(host='192.168.1.110', port=8123): Max retries exceeded with url: /api/history/period/2023-05-10T21:41:15.808197+00:00?end_time=2023-06-09T21%3A41%3A15.808197%2B00%3A00&filter_entity_id=sensor.abc_consumo_ativo_total (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x7fbddec6eba0>, 'Connection to 192.168.1.110 timed out. (connect timeout=10)'))
+[2025-02-28T21:45:06.098+0000] {logging_mixin.py:190} INFO - ❌ Erro de conexão: HTTPConnectionPool(host='192.168.1.110', port=8123): Max retries exceeded with url: /api/history/period/2023-04-10T21:41:15.808196+00:00?end_time=2023-05-10T21%3A41%3A15.808196%2B00%3A00&filter_entity_id=sensor.abc_consumo_ativo_total (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x7fbddecd05c0>, 'Connection to 192.168.1.110 timed out. (connect timeout=10)'))
+[2025-02-28T21:45:16.111+0000] {logging_mixin.py:190} INFO - ❌ Erro de conexão: HTTPConnectionPool(host='192.168.1.110', port=8123): Max retries exceeded with url: /api/history/period/2023-03-11T21:41:15.808195+00:00?end_time=2023-04-10T21%3A41%3A15.808195%2B00%3A00&filter_entity_id=sensor.abc_consumo_ativo_total (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x7fbddecd1ac0>, 'Connection to 192.168.1.110 timed out. (connect timeout=10)'))
+[2025-02-28T21:45:26.120+0000] {logging_mixin.py:190} INFO - ❌ Erro de conexão: HTTPConnectionPool(host='192.168.1.110', port=8123): Max retries exceeded with url: /api/history/period/2023-02-09T21:41:15.808194+00:00?end_time=2023-03-11T21%3A41%3A15.808194%2B00%3A00&filter_entity_id=sensor.abc_consumo_ativo_total (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x7fbddec05550>, 'Connection to 192.168.1.110 timed out. (connect timeout=10)'))
+[2025-02-28T21:45:36.134+0000] {logging_mixin.py:190} INFO - ❌ Erro de conexão: HTTPConnectionPool(host='192.168.1.110', port=8123): Max retries exceeded with url: /api/history/period/2023-01-10T21:41:15.808193+00:00?end_time=2023-02-09T21%3A41%3A15.808193%2B00%3A00&filter_entity_id=sensor.abc_consumo_ativo_total (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x7fbddecaccb0>, 'Connection to 192.168.1.110 timed out. (connect timeout=10)'))
+[2025-02-28T21:45:46.143+0000] {logging_mixin.py:190} INFO - ❌ Erro de conexão: HTTPConnectionPool(host='192.168.1.110', port=8123): Max retries exceeded with url: /api/history/period/2022-12-11T21:41:15.808192+00:00?end_time=2023-01-10T21%3A41%3A15.808192%2B00%3A00&filter_entity_id=sensor.abc_consumo_ativo_total (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x7fbddecaf8c0>, 'Connection to 192.168.1.110 timed out. (connect timeout=10)'))
+[2025-02-28T21:45:56.156+0000] {logging_mixin.py:190} INFO - ❌ Erro de conexão: HTTPConnectionPool(host='192.168.1.110', port=8123): Max retries exceeded with url: /api/history/period/2022-11-11T21:41:15.808191+00:00?end_time=2022-12-11T21%3A41%3A15.808191%2B00%3A00&filter_entity_id=sensor.abc_consumo_ativo_total (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x7fbdded80d10>, 'Connection to 192.168.1.110 timed out. (connect timeout=10)'))
+[2025-02-28T21:46:06.163+0000] {logging_mixin.py:190} INFO - ❌ Erro de conexão: HTTPConnectionPool(host='192.168.1.110', port=8123): Max retries exceeded with url: /api/history/period/2022-10-12T21:41:15.808190+00:00?end_time=2022-11-11T21%3A41%3A15.808190%2B00%3A00&filter_entity_id=sensor.abc_consumo_ativo_total (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x7fbddecd1bb0>, 'Connection to 192.168.1.110 timed out. (connect timeout=10)'))
+[2025-02-28T21:46:16.170+0000] {logging_mixin.py:190} INFO - ❌ Erro de conexão: HTTPConnectionPool(host='192.168.1.110', port=8123): Max retries exceeded with url: /api/history/period/2022-09-12T21:41:15.808189+00:00?end_time=2022-10-12T21%3A41%3A15.808189%2B00%3A00&filter_entity_id=sensor.abc_consumo_ativo_total (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x7fbddecd07d0>, 'Connection to 192.168.1.110 timed out. (connect timeout=10)'))
+[2025-02-28T21:46:26.184+0000] {logging_mixin.py:190} INFO - ❌ Erro de conexão: HTTPConnectionPool(host='192.168.1.110', port=8123): Max retries exceeded with url: /api/history/period/2022-08-13T21:41:15.808188+00:00?end_time=2022-09-12T21%3A41%3A15.808188%2B00%3A00&filter_entity_id=sensor.abc_consumo_ativo_total (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x7fbddecd2cf0>, 'Connection to 192.168.1.110 timed out. (connect timeout=10)'))
+[2025-02-28T21:46:36.199+0000] {logging_mixin.py:190} INFO - ❌ Erro de conexão: HTTPConnectionPool(host='192.168.1.110', port=8123): Max retries exceeded with url: /api/history/period/2022-07-14T21:41:15.808187+00:00?end_time=2022-08-13T21%3A41%3A15.808187%2B00%3A00&filter_entity_id=sensor.abc_consumo_ativo_total (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x7fbddecacb30>, 'Connection to 192.168.1.110 timed out. (connect timeout=10)'))
+[2025-02-28T21:46:46.213+0000] {logging_mixin.py:190} INFO - ❌ Erro de conexão: HTTPConnectionPool(host='192.168.1.110', port=8123): Max retries exceeded with url: /api/history/period/2022-06-14T21:41:15.808186+00:00?end_time=2022-07-14T21%3A41%3A15.808186%2B00%3A00&filter_entity_id=sensor.abc_consumo_ativo_total (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x7fbddecafd70>, 'Connection to 192.168.1.110 timed out. (connect timeout=10)'))
+[2025-02-28T21:46:56.228+0000] {logging_mixin.py:190} INFO - ❌ Erro de conexão: HTTPConnectionPool(host='192.168.1.110', port=8123): Max retries exceeded with url: /api/history/period/2022-06-04T21:41:15.808220+00:00?end_time=2022-06-14T21%3A41%3A15.808185%2B00%3A00&filter_entity_id=sensor.abc_consumo_ativo_total (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x7fbddecd2b70>, 'Connection to 192.168.1.110 timed out. (connect timeout=10)'))
+[2025-02-28T21:46:56.229+0000] {logging_mixin.py:190} INFO - ⚠️ Nenhum dado histórico encontrado para sensor.abc_consumo_ativo_total
+[2025-02-28T21:46:56.230+0000] {logging_mixin.py:190} INFO - ❌ Erro na extração dos dados: ❌ Nenhum dado encontrado para sensor.abc_consumo_ativo_total
+[2025-02-28T21:46:56.232+0000] {taskinstance.py:3313} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 768, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 734, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 424, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/ha_etl_process.py", line 110, in extract_data
+    raise ValueError(f"❌ Nenhum dado encontrado para {entity_consumo_mes}")
+ValueError: ❌ Nenhum dado encontrado para sensor.abc_consumo_ativo_total
+[2025-02-28T21:46:56.268+0000] {logging_mixin.py:190} INFO - Task instance in failure state
+[2025-02-28T21:46:56.269+0000] {logging_mixin.py:190} INFO - Task start:2025-02-28 21:41:15.600306+00:00 end:2025-02-28 21:46:56.267726+00:00 duration:340.66742
+[2025-02-28T21:46:56.270+0000] {logging_mixin.py:190} INFO - Task:<Task(PythonOperator): extract_task> dag:<DAG: ha_etl_process> dagrun:<DagRun ha_etl_process @ 2025-02-28 21:41:13.810506+00:00: manual__2025-02-28T21:41:13.810506+00:00, state:running, queued_at: 2025-02-28 21:41:13.830990+00:00. externally triggered: True>
+[2025-02-28T21:46:56.271+0000] {logging_mixin.py:190} INFO - Failure caused by ❌ Nenhum dado encontrado para sensor.abc_consumo_ativo_total
+[2025-02-28T21:46:56.272+0000] {taskinstance.py:1226} INFO - Marking task as UP_FOR_RETRY. dag_id=ha_etl_process, task_id=extract_task, run_id=manual__2025-02-28T21:41:13.810506+00:00, execution_date=20250228T214113, start_date=20250228T214115, end_date=20250228T214656
+[2025-02-28T21:46:56.349+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-02-28T21:46:56.350+0000] {standard_task_runner.py:124} ERROR - Failed to execute job 132 for task extract_task (❌ Nenhum dado encontrado para sensor.abc_consumo_ativo_total; 1417)
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py", line 117, in _start_by_fork
+    ret = args.func(args, dag=self.dag)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/cli.py", line 116, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 483, in task_run
+    task_return_code = _run_task_by_selected_method(args, _dag, ti)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 256, in _run_task_by_selected_method
+    return _run_raw_task(args, ti)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 341, in _run_raw_task
+    return ti._run_raw_task(
+           ^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3006, in _run_raw_task
+    return _run_raw_task(
+           ^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 274, in _run_raw_task
+    TaskInstance._execute_task_with_callbacks(
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3161, in _execute_task_with_callbacks
+    result = self._execute_task(context, task_orig)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3185, in _execute_task
+    return _execute_task(self, context, task_orig)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 768, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 734, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 424, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/ha_etl_process.py", line 110, in extract_data
+    raise ValueError(f"❌ Nenhum dado encontrado para {entity_consumo_mes}")
+ValueError: ❌ Nenhum dado encontrado para sensor.abc_consumo_ativo_total
+[2025-02-28T21:46:56.390+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 1
+[2025-02-28T21:46:56.432+0000] {taskinstance.py:3901} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-02-28T21:46:56.440+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

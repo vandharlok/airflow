@@ -1,0 +1,34 @@
+[2025-02-28T17:16:22.232+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-02-28T17:16:22.252+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_postgres_to_parquet.extract_task manual__2025-02-28T05:21:18.498061+00:00 [queued]>
+[2025-02-28T17:16:22.267+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_postgres_to_parquet.extract_task manual__2025-02-28T05:21:18.498061+00:00 [queued]>
+[2025-02-28T17:16:22.268+0000] {taskinstance.py:2867} INFO - Starting attempt 2 of 2
+[2025-02-28T17:16:22.284+0000] {taskinstance.py:2890} INFO - Executing <Task(PythonOperator): extract_task> on 2025-02-28 05:21:18.498061+00:00
+[2025-02-28T17:16:22.297+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'etl_postgres_to_parquet', 'extract_task', 'manual__2025-02-28T05:21:18.498061+00:00', '--job-id', '110', '--raw', '--subdir', 'DAGS_FOLDER/etl_process_to_parquet.py', '--cfg-path', '/tmp/tmpmkc_043y']
+[2025-02-28T17:16:22.300+0000] {standard_task_runner.py:105} INFO - Job 110: Subtask extract_task
+[2025-02-28T17:16:22.303+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=196) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-02-28T17:16:22.305+0000] {standard_task_runner.py:72} INFO - Started process 284 to run task
+[2025-02-28T17:16:22.359+0000] {task_command.py:467} INFO - Running <TaskInstance: etl_postgres_to_parquet.extract_task manual__2025-02-28T05:21:18.498061+00:00 [running]> on host 151d4861bf1b
+[2025-02-28T17:16:22.464+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='etl_postgres_to_parquet' AIRFLOW_CTX_TASK_ID='extract_task' AIRFLOW_CTX_EXECUTION_DATE='2025-02-28T05:21:18.498061+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-02-28T05:21:18.498061+00:00'
+[2025-02-28T17:16:22.466+0000] {logging_mixin.py:190} INFO - Task instance is in running state
+[2025-02-28T17:16:22.468+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2025-02-28T17:16:22.469+0000] {logging_mixin.py:190} INFO - Current task name:extract_task state:running start_date:2025-02-28 17:16:22.252961+00:00
+[2025-02-28T17:16:22.470+0000] {logging_mixin.py:190} INFO - Dag name:etl_postgres_to_parquet and current dag run status:running
+[2025-02-28T17:16:22.471+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2025-02-28T17:16:22.473+0000] {logging_mixin.py:190} INFO - 🔍 Tentando se conectar ao PostgreSQL...
+[2025-02-28T17:16:22.488+0000] {base.py:84} INFO - Retrieving connection '***_default'
+[2025-02-28T17:16:22.580+0000] {logging_mixin.py:190} INFO - ✅ Conexão com o PostgreSQL estabelecida com sucesso!
+[2025-02-28T17:16:22.597+0000] {logging_mixin.py:190} INFO - ✅ Teste de conexão bem-sucedido! PostgreSQL respondeu corretamente.
+[2025-02-28T17:16:22.598+0000] {logging_mixin.py:190} INFO - 📦 Executando query para extrair os dados...
+[2025-02-28T17:16:22.618+0000] {logging_mixin.py:190} WARNING - /opt/***/dags/etl_process_to_parquet.py:27 UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+[2025-02-28T17:16:22.645+0000] {logging_mixin.py:190} INFO - ✅ 8 registros extraídos da tabela `produtos`.
+[2025-02-28T17:16:22.657+0000] {logging_mixin.py:190} INFO - 📁 Dados salvos para referência em /opt/***/dags/output/raw_data.csv
+[2025-02-28T17:16:22.659+0000] {python.py:240} INFO - Done. Returned value was: {"id_produto":{"0":8,"1":1,"2":2,"3":3,"4":4,"5":5,"6":6,"7":7},"Categoria":{"0":"testec","1":"testeb","2":"TESTEa","3":"tested","4":"testee","5":"testef","6":"testedh","7":"testett"},"estoque_atual":{"0":44120,"1":85402,"2":71000,"3":66021,"4":22132,"5":12133,"6":55423,"7":11232},"fornecedor":{"0":"TechCorp","1":"TechCorp","2":"GadgetWorld","3":"AudioTech","4":"KeyForge","5":"PrintWorks","6":"VisionTech","7":"GripMaster"},"pais_origem":{"0":"Brasil","1":"Holanda","2":"Belgica","3":"Polonia","4":"Inglaterra","5":"Nigeria","6":"USA","7":"Uruguai"}}
+[2025-02-28T17:16:22.688+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-02-28T17:16:22.689+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=etl_***_to_parquet, task_id=extract_task, run_id=manual__2025-02-28T05:21:18.498061+00:00, execution_date=20250228T052118, start_date=20250228T171622, end_date=20250228T171622
+[2025-02-28T17:16:22.719+0000] {logging_mixin.py:190} INFO - Task instance in success state
+[2025-02-28T17:16:22.720+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: running
+[2025-02-28T17:16:22.721+0000] {logging_mixin.py:190} INFO - Dag name:etl_***_to_parquet queued_at:2025-02-28 05:21:18.512831+00:00
+[2025-02-28T17:16:22.721+0000] {logging_mixin.py:190} INFO - Task hostname:151d4861bf1b operator:PythonOperator
+[2025-02-28T17:16:22.761+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-02-28T17:16:22.796+0000] {taskinstance.py:3901} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-02-28T17:16:22.798+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

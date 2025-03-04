@@ -1,0 +1,30 @@
+[2025-02-21T15:40:53.430+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-02-21T15:40:53.448+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: example_bash_operator.runme_0 manual__2025-02-21T15:40:49+00:00 [queued]>
+[2025-02-21T15:40:53.457+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: example_bash_operator.runme_0 manual__2025-02-21T15:40:49+00:00 [queued]>
+[2025-02-21T15:40:53.458+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 1
+[2025-02-21T15:40:53.479+0000] {taskinstance.py:2890} INFO - Executing <Task(BashOperator): runme_0> on 2025-02-21 15:40:49+00:00
+[2025-02-21T15:40:53.490+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'example_bash_operator', 'runme_0', 'manual__2025-02-21T15:40:49+00:00', '--job-id', '16', '--raw', '--subdir', '/home/***/.local/lib/python3.12/site-packages/***/example_dags/example_bash_operator.py', '--cfg-path', '/tmp/tmpgnml9syz']
+[2025-02-21T15:40:53.492+0000] {standard_task_runner.py:105} INFO - Job 16: Subtask runme_0
+[2025-02-21T15:40:53.496+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=1706) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-02-21T15:40:53.497+0000] {standard_task_runner.py:72} INFO - Started process 1710 to run task
+[2025-02-21T15:40:53.556+0000] {task_command.py:467} INFO - Running <TaskInstance: example_bash_operator.runme_0 manual__2025-02-21T15:40:49+00:00 [running]> on host 151d4861bf1b
+[2025-02-21T15:40:53.671+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='example_bash_operator' AIRFLOW_CTX_TASK_ID='runme_0' AIRFLOW_CTX_EXECUTION_DATE='2025-02-21T15:40:49+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-02-21T15:40:49+00:00'
+[2025-02-21T15:40:53.673+0000] {logging_mixin.py:190} INFO - Task instance is in running state
+[2025-02-21T15:40:53.673+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2025-02-21T15:40:53.674+0000] {logging_mixin.py:190} INFO - Current task name:runme_0 state:running start_date:2025-02-21 15:40:53.449300+00:00
+[2025-02-21T15:40:53.674+0000] {logging_mixin.py:190} INFO - Dag name:example_bash_operator and current dag run status:running
+[2025-02-21T15:40:53.675+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2025-02-21T15:40:53.676+0000] {subprocess.py:78} INFO - Tmp dir root location: /tmp
+[2025-02-21T15:40:53.677+0000] {subprocess.py:88} INFO - Running command: ['/usr/bin/bash', '-c', 'echo "example_bash_operator__runme_0__20250221" && sleep 1']
+[2025-02-21T15:40:53.691+0000] {subprocess.py:99} INFO - Output:
+[2025-02-21T15:40:53.692+0000] {subprocess.py:106} INFO - example_bash_operator__runme_0__20250221
+[2025-02-21T15:40:54.694+0000] {subprocess.py:110} INFO - Command exited with return code 0
+[2025-02-21T15:40:54.732+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-02-21T15:40:54.733+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=example_bash_operator, task_id=runme_0, run_id=manual__2025-02-21T15:40:49+00:00, execution_date=20250221T154049, start_date=20250221T154053, end_date=20250221T154054
+[2025-02-21T15:40:54.779+0000] {logging_mixin.py:190} INFO - Task instance in success state
+[2025-02-21T15:40:54.780+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: running
+[2025-02-21T15:40:54.781+0000] {logging_mixin.py:190} INFO - Dag name:example_bash_operator queued_at:2025-02-21 15:40:51.473954+00:00
+[2025-02-21T15:40:54.781+0000] {logging_mixin.py:190} INFO - Task hostname:151d4861bf1b operator:BashOperator
+[2025-02-21T15:40:54.799+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-02-21T15:40:54.846+0000] {taskinstance.py:3901} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-02-21T15:40:54.857+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

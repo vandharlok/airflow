@@ -1,0 +1,28 @@
+[2025-03-04T18:03:03.507+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-03-04T18:03:03.532+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ha_etl_process.load_task manual__2025-03-04T18:02:55.995241+00:00 [queued]>
+[2025-03-04T18:03:03.543+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ha_etl_process.load_task manual__2025-03-04T18:02:55.995241+00:00 [queued]>
+[2025-03-04T18:03:03.545+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 2
+[2025-03-04T18:03:03.560+0000] {taskinstance.py:2890} INFO - Executing <Task(PythonOperator): load_task> on 2025-03-04 18:02:55.995241+00:00
+[2025-03-04T18:03:03.575+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=2337) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-03-04T18:03:03.574+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'ha_etl_process', 'load_task', 'manual__2025-03-04T18:02:55.995241+00:00', '--job-id', '234', '--raw', '--subdir', 'DAGS_FOLDER/ha_etl_process.py', '--cfg-path', '/tmp/tmps30f7og_']
+[2025-03-04T18:03:03.577+0000] {standard_task_runner.py:72} INFO - Started process 2338 to run task
+[2025-03-04T18:03:03.577+0000] {standard_task_runner.py:105} INFO - Job 234: Subtask load_task
+[2025-03-04T18:03:03.640+0000] {task_command.py:467} INFO - Running <TaskInstance: ha_etl_process.load_task manual__2025-03-04T18:02:55.995241+00:00 [running]> on host 151d4861bf1b
+[2025-03-04T18:03:03.752+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='ha_etl_process' AIRFLOW_CTX_TASK_ID='load_task' AIRFLOW_CTX_EXECUTION_DATE='2025-03-04T18:02:55.995241+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-03-04T18:02:55.995241+00:00'
+[2025-03-04T18:03:03.754+0000] {logging_mixin.py:190} INFO - Task instance is in running state
+[2025-03-04T18:03:03.755+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2025-03-04T18:03:03.755+0000] {logging_mixin.py:190} INFO - Current task name:load_task state:running start_date:2025-03-04 18:03:03.533388+00:00
+[2025-03-04T18:03:03.756+0000] {logging_mixin.py:190} INFO - Dag name:ha_etl_process and current dag run status:running
+[2025-03-04T18:03:03.757+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2025-03-04T18:03:03.785+0000] {logging_mixin.py:190} WARNING - /opt/***/dags/ha_etl_process.py:186 FutureWarning: Passing literal json to 'read_json' is deprecated and will be removed in a future version. To read from a literal string, wrap it in a 'StringIO' object.
+[2025-03-04T18:03:03.840+0000] {logging_mixin.py:190} INFO - ✅ Dados carregados com sucesso em /opt/***/dags/output/data.parquet
+[2025-03-04T18:03:03.841+0000] {python.py:240} INFO - Done. Returned value was: None
+[2025-03-04T18:03:03.852+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-03-04T18:03:03.853+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=ha_etl_process, task_id=load_task, run_id=manual__2025-03-04T18:02:55.995241+00:00, execution_date=20250304T180255, start_date=20250304T180303, end_date=20250304T180303
+[2025-03-04T18:03:03.890+0000] {logging_mixin.py:190} INFO - Task instance in success state
+[2025-03-04T18:03:03.891+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: running
+[2025-03-04T18:03:03.891+0000] {logging_mixin.py:190} INFO - Dag name:ha_etl_process queued_at:2025-03-04 18:02:56.031569+00:00
+[2025-03-04T18:03:03.892+0000] {logging_mixin.py:190} INFO - Task hostname:151d4861bf1b operator:PythonOperator
+[2025-03-04T18:03:03.913+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-03-04T18:03:03.935+0000] {taskinstance.py:3901} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-03-04T18:03:03.938+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

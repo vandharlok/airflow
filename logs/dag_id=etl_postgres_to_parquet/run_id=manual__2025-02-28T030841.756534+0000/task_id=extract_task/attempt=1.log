@@ -1,0 +1,141 @@
+[2025-02-28T03:08:43.575+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-02-28T03:08:43.593+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_postgres_to_parquet.extract_task manual__2025-02-28T03:08:41.756534+00:00 [queued]>
+[2025-02-28T03:08:43.606+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_postgres_to_parquet.extract_task manual__2025-02-28T03:08:41.756534+00:00 [queued]>
+[2025-02-28T03:08:43.607+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 2
+[2025-02-28T03:08:43.629+0000] {taskinstance.py:2890} INFO - Executing <Task(PythonOperator): extract_task> on 2025-02-28 03:08:41.756534+00:00
+[2025-02-28T03:08:43.638+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'etl_postgres_to_parquet', 'extract_task', 'manual__2025-02-28T03:08:41.756534+00:00', '--job-id', '84', '--raw', '--subdir', 'DAGS_FOLDER/etl_process_to_parquet.py', '--cfg-path', '/tmp/tmpvqehtjgd']
+[2025-02-28T03:08:43.640+0000] {standard_task_runner.py:105} INFO - Job 84: Subtask extract_task
+[2025-02-28T03:08:43.643+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=813) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-02-28T03:08:43.644+0000] {standard_task_runner.py:72} INFO - Started process 814 to run task
+[2025-02-28T03:08:43.715+0000] {task_command.py:467} INFO - Running <TaskInstance: etl_postgres_to_parquet.extract_task manual__2025-02-28T03:08:41.756534+00:00 [running]> on host 151d4861bf1b
+[2025-02-28T03:08:43.823+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='etl_postgres_to_parquet' AIRFLOW_CTX_TASK_ID='extract_task' AIRFLOW_CTX_EXECUTION_DATE='2025-02-28T03:08:41.756534+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-02-28T03:08:41.756534+00:00'
+[2025-02-28T03:08:43.825+0000] {logging_mixin.py:190} INFO - Task instance is in running state
+[2025-02-28T03:08:43.825+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2025-02-28T03:08:43.826+0000] {logging_mixin.py:190} INFO - Current task name:extract_task state:running start_date:2025-02-28 03:08:43.594519+00:00
+[2025-02-28T03:08:43.827+0000] {logging_mixin.py:190} INFO - Dag name:etl_postgres_to_parquet and current dag run status:running
+[2025-02-28T03:08:43.827+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2025-02-28T03:08:43.828+0000] {logging_mixin.py:190} INFO - 🔍 Tentando se conectar ao PostgreSQL...
+[2025-02-28T03:08:43.842+0000] {base.py:84} INFO - Retrieving connection '***_default'
+[2025-02-28T03:08:43.933+0000] {logging_mixin.py:190} INFO - ✅ Conexão com o PostgreSQL estabelecida com sucesso!
+[2025-02-28T03:08:43.938+0000] {logging_mixin.py:190} INFO - ✅ Teste de conexão bem-sucedido! PostgreSQL respondeu corretamente.
+[2025-02-28T03:08:43.940+0000] {logging_mixin.py:190} INFO - 📦 Executando query para extrair os dados...
+[2025-02-28T03:08:43.956+0000] {logging_mixin.py:190} WARNING - /opt/***/dags/etl_process_to_parquet.py:36 UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+[2025-02-28T03:08:43.964+0000] {logging_mixin.py:190} INFO - ✅ 8 registros extraídos da tabela `produtos`.
+[2025-02-28T03:08:43.969+0000] {logging_mixin.py:190} INFO - ❌ Erro na extração dos dados: Cannot save file into a non-existent directory: '/opt/***/dags/output'
+[2025-02-28T03:08:43.970+0000] {taskinstance.py:3313} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 768, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 734, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 424, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/etl_process_to_parquet.py", line 43, in extract_data
+    df.to_csv(raw_csv_path, index=False)
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/core/generic.py", line 3902, in to_csv
+    return DataFrameRenderer(formatter).to_csv(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/io/formats/format.py", line 1152, in to_csv
+    csv_formatter.save()
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/io/formats/csvs.py", line 247, in save
+    with get_handle(
+         ^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/io/common.py", line 739, in get_handle
+    check_parent_directory(str(handle))
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/io/common.py", line 604, in check_parent_directory
+    raise OSError(rf"Cannot save file into a non-existent directory: '{parent}'")
+OSError: Cannot save file into a non-existent directory: '/opt/***/dags/output'
+[2025-02-28T03:08:43.998+0000] {logging_mixin.py:190} INFO - Task instance in failure state
+[2025-02-28T03:08:43.999+0000] {logging_mixin.py:190} INFO - Task start:2025-02-28 03:08:43.594519+00:00 end:2025-02-28 03:08:43.998349+00:00 duration:0.40383
+[2025-02-28T03:08:44.000+0000] {logging_mixin.py:190} INFO - Task:<Task(PythonOperator): extract_task> dag:<DAG: etl_***_to_parquet> dagrun:<DagRun etl_***_to_parquet @ 2025-02-28 03:08:41.756534+00:00: manual__2025-02-28T03:08:41.756534+00:00, state:running, queued_at: 2025-02-28 03:08:41.771899+00:00. externally triggered: True>
+[2025-02-28T03:08:44.001+0000] {logging_mixin.py:190} INFO - Failure caused by Cannot save file into a non-existent directory: '/opt/***/dags/output'
+[2025-02-28T03:08:44.002+0000] {taskinstance.py:1226} INFO - Marking task as UP_FOR_RETRY. dag_id=etl_***_to_parquet, task_id=extract_task, run_id=manual__2025-02-28T03:08:41.756534+00:00, execution_date=20250228T030841, start_date=20250228T030843, end_date=20250228T030843
+[2025-02-28T03:08:44.046+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-02-28T03:08:44.048+0000] {standard_task_runner.py:124} ERROR - Failed to execute job 84 for task extract_task (Cannot save file into a non-existent directory: '/opt/***/dags/output'; 814)
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py", line 117, in _start_by_fork
+    ret = args.func(args, dag=self.dag)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/cli.py", line 116, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 483, in task_run
+    task_return_code = _run_task_by_selected_method(args, _dag, ti)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 256, in _run_task_by_selected_method
+    return _run_raw_task(args, ti)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 341, in _run_raw_task
+    return ti._run_raw_task(
+           ^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3006, in _run_raw_task
+    return _run_raw_task(
+           ^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 274, in _run_raw_task
+    TaskInstance._execute_task_with_callbacks(
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3161, in _execute_task_with_callbacks
+    result = self._execute_task(context, task_orig)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3185, in _execute_task
+    return _execute_task(self, context, task_orig)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 768, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 734, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 424, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/etl_process_to_parquet.py", line 43, in extract_data
+    df.to_csv(raw_csv_path, index=False)
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/core/generic.py", line 3902, in to_csv
+    return DataFrameRenderer(formatter).to_csv(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/io/formats/format.py", line 1152, in to_csv
+    csv_formatter.save()
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/io/formats/csvs.py", line 247, in save
+    with get_handle(
+         ^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/io/common.py", line 739, in get_handle
+    check_parent_directory(str(handle))
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/io/common.py", line 604, in check_parent_directory
+    raise OSError(rf"Cannot save file into a non-existent directory: '{parent}'")
+OSError: Cannot save file into a non-existent directory: '/opt/***/dags/output'
+[2025-02-28T03:08:44.102+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 1
+[2025-02-28T03:08:44.138+0000] {taskinstance.py:3901} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-02-28T03:08:44.145+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

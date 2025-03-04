@@ -1,0 +1,28 @@
+[2025-03-04T17:28:46.212+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-03-04T17:28:46.241+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_postgres_to_parquet.transform_task scheduled__2025-03-03T00:00:00+00:00 [queued]>
+[2025-03-04T17:28:46.256+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_postgres_to_parquet.transform_task scheduled__2025-03-03T00:00:00+00:00 [queued]>
+[2025-03-04T17:28:46.257+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 2
+[2025-03-04T17:28:46.272+0000] {taskinstance.py:2890} INFO - Executing <Task(PythonOperator): transform_task> on 2025-03-03 00:00:00+00:00
+[2025-03-04T17:28:46.282+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'etl_postgres_to_parquet', 'transform_task', 'scheduled__2025-03-03T00:00:00+00:00', '--job-id', '205', '--raw', '--subdir', 'DAGS_FOLDER/etl_process_to_parquet.py', '--cfg-path', '/tmp/tmpg7rkyps9']
+[2025-03-04T17:28:46.284+0000] {standard_task_runner.py:105} INFO - Job 205: Subtask transform_task
+[2025-03-04T17:28:46.288+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=355) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-03-04T17:28:46.289+0000] {standard_task_runner.py:72} INFO - Started process 429 to run task
+[2025-03-04T17:28:46.345+0000] {task_command.py:467} INFO - Running <TaskInstance: etl_postgres_to_parquet.transform_task scheduled__2025-03-03T00:00:00+00:00 [running]> on host 151d4861bf1b
+[2025-03-04T17:28:46.462+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='etl_postgres_to_parquet' AIRFLOW_CTX_TASK_ID='transform_task' AIRFLOW_CTX_EXECUTION_DATE='2025-03-03T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-03-03T00:00:00+00:00'
+[2025-03-04T17:28:46.463+0000] {logging_mixin.py:190} INFO - Task instance is in running state
+[2025-03-04T17:28:46.464+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2025-03-04T17:28:46.464+0000] {logging_mixin.py:190} INFO - Current task name:transform_task state:running start_date:2025-03-04 17:28:46.242550+00:00
+[2025-03-04T17:28:46.465+0000] {logging_mixin.py:190} INFO - Dag name:etl_postgres_to_parquet and current dag run status:running
+[2025-03-04T17:28:46.465+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2025-03-04T17:28:46.485+0000] {logging_mixin.py:190} WARNING - /opt/***/dags/etl_process_to_parquet.py:51 FutureWarning: Passing literal json to 'read_json' is deprecated and will be removed in a future version. To read from a literal string, wrap it in a 'StringIO' object.
+[2025-03-04T17:28:46.507+0000] {logging_mixin.py:190} INFO - ✅ Dados transformados e salvos em /opt/***/dags/output/processed_data.csv
+[2025-03-04T17:28:46.508+0000] {python.py:240} INFO - Done. Returned value was: {"id_produto":{"0":8,"1":1,"2":2,"3":3,"4":4,"5":5,"6":6,"7":7},"Categoria":{"0":"testec","1":"testeb","2":"TESTEa","3":"tested","4":"testee","5":"testef","6":"testedh","7":"testett"},"estoque_atual":{"0":44120,"1":85402,"2":71000,"3":66021,"4":22132,"5":12133,"6":55423,"7":11232},"fornecedor":{"0":"TechCorp","1":"TechCorp","2":"GadgetWorld","3":"AudioTech","4":"KeyForge","5":"PrintWorks","6":"VisionTech","7":"GripMaster"},"pais_origem":{"0":"Brasil","1":"Holanda","2":"Belgica","3":"Polonia","4":"Inglaterra","5":"Nigeria","6":"USA","7":"Uruguai"}}
+[2025-03-04T17:28:46.532+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-03-04T17:28:46.533+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=etl_postgres_to_parquet, task_id=transform_task, run_id=scheduled__2025-03-03T00:00:00+00:00, execution_date=20250303T000000, start_date=20250304T172846, end_date=20250304T172846
+[2025-03-04T17:28:46.557+0000] {logging_mixin.py:190} INFO - Task instance in success state
+[2025-03-04T17:28:46.557+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: running
+[2025-03-04T17:28:46.558+0000] {logging_mixin.py:190} INFO - Dag name:etl_postgres_to_parquet queued_at:2025-03-04 17:28:41.039546+00:00
+[2025-03-04T17:28:46.558+0000] {logging_mixin.py:190} INFO - Task hostname:151d4861bf1b operator:PythonOperator
+[2025-03-04T17:28:46.585+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-03-04T17:28:46.610+0000] {taskinstance.py:3901} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-03-04T17:28:46.612+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

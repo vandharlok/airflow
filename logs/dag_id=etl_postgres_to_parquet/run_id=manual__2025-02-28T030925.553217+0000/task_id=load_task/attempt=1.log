@@ -1,0 +1,28 @@
+[2025-02-28T03:14:34.188+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-02-28T03:14:34.212+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_postgres_to_parquet.load_task manual__2025-02-28T03:09:25.553217+00:00 [queued]>
+[2025-02-28T03:14:34.223+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_postgres_to_parquet.load_task manual__2025-02-28T03:09:25.553217+00:00 [queued]>
+[2025-02-28T03:14:34.224+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 2
+[2025-02-28T03:14:34.242+0000] {taskinstance.py:2890} INFO - Executing <Task(PythonOperator): load_task> on 2025-02-28 03:09:25.553217+00:00
+[2025-02-28T03:14:34.257+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=1753) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-02-28T03:14:34.258+0000] {standard_task_runner.py:72} INFO - Started process 1754 to run task
+[2025-02-28T03:14:34.256+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'etl_postgres_to_parquet', 'load_task', 'manual__2025-02-28T03:09:25.553217+00:00', '--job-id', '103', '--raw', '--subdir', 'DAGS_FOLDER/etl_process_to_parquet.py', '--cfg-path', '/tmp/tmpbi0u_bkm']
+[2025-02-28T03:14:34.260+0000] {standard_task_runner.py:105} INFO - Job 103: Subtask load_task
+[2025-02-28T03:14:34.333+0000] {task_command.py:467} INFO - Running <TaskInstance: etl_postgres_to_parquet.load_task manual__2025-02-28T03:09:25.553217+00:00 [running]> on host 151d4861bf1b
+[2025-02-28T03:14:34.461+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='etl_postgres_to_parquet' AIRFLOW_CTX_TASK_ID='load_task' AIRFLOW_CTX_EXECUTION_DATE='2025-02-28T03:09:25.553217+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-02-28T03:09:25.553217+00:00'
+[2025-02-28T03:14:34.463+0000] {logging_mixin.py:190} INFO - Task instance is in running state
+[2025-02-28T03:14:34.464+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2025-02-28T03:14:34.465+0000] {logging_mixin.py:190} INFO - Current task name:load_task state:running start_date:2025-02-28 03:14:34.213389+00:00
+[2025-02-28T03:14:34.465+0000] {logging_mixin.py:190} INFO - Dag name:etl_postgres_to_parquet and current dag run status:running
+[2025-02-28T03:14:34.466+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2025-02-28T03:14:34.496+0000] {logging_mixin.py:190} WARNING - /opt/***/dags/etl_process_to_parquet.py:72 FutureWarning: Passing literal json to 'read_json' is deprecated and will be removed in a future version. To read from a literal string, wrap it in a 'StringIO' object.
+[2025-02-28T03:14:34.549+0000] {logging_mixin.py:190} INFO - ✅ Dados carregados com sucesso em /opt/***/dags/output/data.parquet
+[2025-02-28T03:14:34.550+0000] {python.py:240} INFO - Done. Returned value was: None
+[2025-02-28T03:14:34.565+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-02-28T03:14:34.566+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=etl_postgres_to_parquet, task_id=load_task, run_id=manual__2025-02-28T03:09:25.553217+00:00, execution_date=20250228T030925, start_date=20250228T031434, end_date=20250228T031434
+[2025-02-28T03:14:34.604+0000] {logging_mixin.py:190} INFO - Task instance in success state
+[2025-02-28T03:14:34.605+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: running
+[2025-02-28T03:14:34.605+0000] {logging_mixin.py:190} INFO - Dag name:etl_postgres_to_parquet queued_at:2025-02-28 03:09:25.565990+00:00
+[2025-02-28T03:14:34.606+0000] {logging_mixin.py:190} INFO - Task hostname:151d4861bf1b operator:PythonOperator
+[2025-02-28T03:14:34.635+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-02-28T03:14:34.671+0000] {taskinstance.py:3901} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-02-28T03:14:34.676+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
